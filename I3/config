@@ -1,0 +1,1 @@
+echo 'exec --no-startup-id cat ~/.config/i3/Dracula' >> ~/.config/i3/config
