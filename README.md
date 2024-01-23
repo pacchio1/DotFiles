@@ -5,7 +5,7 @@
 ## Command
 
 mkdir ~/.local/share/fonts
-git clone <https://github.com/pacchio1/Config.git> ~/.config
+git clone <https://github.com/pacchio1/Config.git> ~/
 
 ### NvChad
 
