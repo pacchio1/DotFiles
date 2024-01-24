@@ -14,6 +14,12 @@ git i3 i3status i3status neovim tmux alacritty bat fzf exa
 
 ## Repo
 
+### ![Lazy vim](https://www.lazyvim.org/)
+
+mv ~/.config/nvim{,.bak}
+git clone <https://github.com/LazyVim/starter> ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+
 ### Tmux Plugin
 
 git clone <https://github.com/tmux-plugins/tpm> ~/.tmux/plugins/tpm
