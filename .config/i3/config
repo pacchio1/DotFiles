@@ -94,8 +94,9 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-#statrt fzf
-bindsym $mod+Shift+s exec --no-startup-id fzf
+#statrt fzf in a new terminal con mode
+bindsym $mod+Shift+f exec --no-startup-id terminator -e fzf
+
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -218,3 +219,4 @@ bar {
 #bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'JetBrainsMonoNerdFontPropo-Thin-10' -p 'dmenu%'"
 
+exec_always nitrogen --restore

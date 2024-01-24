@@ -19,7 +19,7 @@ yay -S vscodium-bin
 
 ## Pacchetti
 
-git i3 i3status i3status neovim tmux alacritty bat fzf exa
+git i3 i3status i3status neovim tmux alacritty bat fzf exa nitrogen
 
 ## Repo
 
@@ -40,9 +40,3 @@ tmux source ~/.tmux.conf
 prefix + I per installare
 
 ## Other
-
-### YaY
-
-git clone <https://aur.archlinux.org/yay.git>
-cd yay
-makepkg -si
