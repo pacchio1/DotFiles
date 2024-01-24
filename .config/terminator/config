@@ -1,0 +1,20 @@
+[global_config]
+[keybindings]
+  split_horiz = <Primary>quotedbl
+  split_vert = <Primary>percent
+  close_term = <Primary>q
+[profiles]
+  [[default]]
+    background_color = "#282828"
+    font = SpaceMono Nerd Font Propo 12
+    foreground_color = "#ebdbb2"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
