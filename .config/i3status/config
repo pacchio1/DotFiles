@@ -60,12 +60,12 @@ path_exists VPN {
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "  %a %d-%m-%Y   %H:%M:%S %Z"
         #hide_if_equals_localtime = true
 }
 
 tztime rome {
-        format = " 📆 %d-%m-%Y   🕗 %H:%M:%S %Z"
+        format = "  %a %d-%m-%Y   %H:%M:%S %Z"
         timezone = "Europe/Rome"
 }
 
@@ -80,18 +80,18 @@ cpu_temperature 0 {
 }
 
 memory {
-        format = "RAM: %used / %total"
+        format = "  RAM: %used / %total"
         #threshold_degraded = "10%"
         #format_degraded = "MEMORY: %free"
 }
 
 disk "/" {
-        format = "disk free: %free"
+        format = "  DISK: %free / %total"
 }
 
 read_file uptime {
         path = "/proc/uptime"
 }
 cpu_usage {
-        format = "CPU: %usage"
+        format = "  CPU: %usage"
 }
