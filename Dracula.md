@@ -60,3 +60,13 @@ prefix + I
 ## Bash
 
 su +bashrc.sh
+
+## gtk
+
+mkdir ~/.themes
+
+mv .themes/* ~/.themes
+
+gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
+
+gsettings set org.gnome.desktop.wm.preferences theme "Dracula"

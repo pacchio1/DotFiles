@@ -7,19 +7,11 @@
 mkdir ~/.local/share/fonts
 git clone <https://github.com/pacchio1/DotFiles.git>
 mv DotFiles/* ..
-
-### tmux dracula
-
-git clone <https://github.com/dracula/tmux.git>
-mv tmux/* .tmux
-ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
-cp ~/.tmux/.tmux.conf.local ~/
-
-yay -S vscodium-bin
+in tmux premi prefix + shift + i
 
 ## Pacchetti
 
-git i3 i3status i3status neovim tmux alacritty bat fzf exa nitrogen
+git i3 i3status i3status neovim tmux alacritty bat fzf exa nitrogen thunar
 
 ## Repo
 
