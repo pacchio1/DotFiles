@@ -97,6 +97,7 @@ bindsym $mod+f fullscreen toggle
 #statrt fzf in a new terminal con mode
 #bindsym $mod+Shift+f exec --no-startup-id terminator -e fzf
 bindsym $mod+Shift+f exec thunar
+bindsym $mod+Shift+v exec code
 
 
 # change container layout (stacked, tabbed, toggle split)
