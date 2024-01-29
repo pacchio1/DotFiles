@@ -219,9 +219,31 @@ bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F
 
 exec_always nitrogen --restore
 
+### My Bindings ###
+
+# not used
 
 #bindsym $mod+Shift+f exec --no-startup-id terminator -e fzf
+
+# plain
+bindsym $mod+b exec firefox
+bindsym $mod+g exec github-desktop
+
+
+# Shift
+
 bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+v exec code
-bindsym $mod+Shift+n exec --no-startup-id terminator -e nvim 
+bindsym $mod+Shift+n exec --no-startup-id terminator -e nvim
+bindsym $mod+Shift+d exec discord
+bindsym $mod+Shift+t exec telegram-desktop
 
+# Control
+bindsym Mod+Control+z exec --no-startup-id terminator -e nvim ~/.config/i3/config
+bindsym Mod+Control+x exec --no-startup-id terminator -e nvim ~/.config/i3status/config
+
+#function
+
+bindsym $mod+F1 exec firefox https://i3wm.org/docs/refcard.html
+bindsym $mod+F2 exec firefox https://tmuxcheatsheet.com/
+bindsym $mod+F3 exec firefox https://devhints.io/vim
