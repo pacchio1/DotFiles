@@ -12,7 +12,8 @@ alias gck='git checkout'
 alias gpl='git pull'
 alias gph='git push'
 alias vim='nvim'
-alias ip='ip a -c'
+alias ip='ip -c a'
+alias aur-install='makepkg -si'
 
 #programmi
 # Dracula theme for Bash
