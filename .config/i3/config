@@ -229,6 +229,9 @@ exec_always nitrogen --restore
 bindsym $mod+b exec firefox
 bindsym $mod+g exec github-desktop
 
+bindsym $mod+z exec --no-startup-id terminator -e nvim ~/.config/i3/config
+bindsym $mod+x exec --no-startup-id terminator -e nvim ~/.config/i3status/config
+
 
 # Shift
 
@@ -237,10 +240,6 @@ bindsym $mod+Shift+v exec code
 bindsym $mod+Shift+n exec --no-startup-id terminator -e nvim
 bindsym $mod+Shift+d exec discord
 bindsym $mod+Shift+t exec telegram-desktop
-
-# Control
-bindsym Mod+Control+z exec --no-startup-id terminator -e nvim ~/.config/i3/config
-bindsym Mod+Control+x exec --no-startup-id terminator -e nvim ~/.config/i3status/config
 
 #function
 
