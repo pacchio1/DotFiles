@@ -5,9 +5,12 @@
 ## Command
 
 mkdir ~/.local/share/fonts
+
 git clone <https://github.com/pacchio1/DotFiles.git>
+
 mv DotFiles/* ..
-in tmux premi prefix + shift + i
+
+### in tmux premi prefix + shift + i
 
 ## Pacchetti
 
@@ -29,6 +32,6 @@ git clone <https://github.com/tmux-plugins/tpm> ~/.tmux/plugins/tpm
 
 tmux source ~/.tmux.conf
 
-prefix + I per installare
+### prefix + I per installare
 
 ## Other
