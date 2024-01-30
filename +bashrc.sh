@@ -14,12 +14,12 @@ alias gph='git push'
 alias vim='nvim'
 alias ip='ip -c a'
 alias aur-install='makepkg -si'
+alias i3-config= 'nvim ~/.config/i3/config'
+alias i3status-config= 'nvim ~/.config/i3status/config'
 
 #programmi
 # Dracula theme for Bash
-export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;108m\]\h\[$(tput sgr0)\]:\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;216m\]\w\[$(tput sgr0)\]\[\033[38;5;37m\]\$ \[$(tput sgr0)\]"
+export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;>
 neofetch
 
 #path variabili
-
-
