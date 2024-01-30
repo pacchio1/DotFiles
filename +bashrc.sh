@@ -14,8 +14,8 @@ alias gph='git push'
 alias vim='nvim'
 alias ip='ip -c a'
 alias aur-install='makepkg -si'
-alias i3-config= 'nvim ~/.config/i3/config'
-alias i3status-config= 'nvim ~/.config/i3status/config'
+alias i3config='nvim ~/.config/i3/config'
+alias i3status-config='nvim ~/.config/i3status/config'
 
 #programmi
 # Dracula theme for Bash
