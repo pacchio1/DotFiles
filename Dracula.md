@@ -70,3 +70,14 @@ mv .themes/* ~/.themes
 gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
 
 gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
+
+
+## xfc 
+
+sudo apt-get install lxappearance
+
+
+mv .themes/* ~/.themes
+
+lxappearance
+
