@@ -21,6 +21,9 @@ if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
 fi
 #path variabili
 
+#vpn
+alias vpn-excentio="cd ~ && sudo openvpn marcopacchiotti.ovpn"
+
 #Alias 
 
 #commands
