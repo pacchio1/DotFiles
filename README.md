@@ -14,7 +14,11 @@ mv DotFiles/* ..
 
 ## Pacchetti
 
-git i3 i3status i3status neovim tmux alacritty bat fzf exa nitrogen thunar fameshot blueman
+git i3 i3status i3status neovim tmux terminator bat fzf exa nitrogen 
+
+### Arch
+
+thunar fameshot blueman
 
 ## Repo
 
