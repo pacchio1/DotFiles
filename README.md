@@ -41,3 +41,9 @@ tmux source ~/.tmux.conf
 ### prefix + I per installare
 
 ## Other
+
+## Versionare i dot files
+
+'''bash
+ln -sf .\* ~
+'''
