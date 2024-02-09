@@ -8,13 +8,13 @@ mkdir ~/.local/share/fonts
 
 git clone <https://github.com/pacchio1/DotFiles.git>
 
-mv DotFiles/* ..
+mv DotFiles/\* ..
 
 ### in tmux premi prefix + shift + i
 
 ## Pacchetti
 
-git i3 i3status i3status neovim tmux terminator bat fzf exa nitrogen 
+git i3 i3status i3status neovim nitrogen tmux terminator bat fzf exa
 
 ### Arch
 
