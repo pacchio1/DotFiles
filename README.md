@@ -14,15 +14,17 @@ mv DotFiles/\* ..
 
 ## Pacchetti
 
-git i3 i3status i3status neovim nitrogen tmux terminator bat fzf exa
+git neovim tmux terminator bat fzf exa
 
-### Arch
+### I3 customization
 
-thunar fameshot blueman
+i3 i3status i3status nitrogen thunar fameshot blueman
 
 ## Repo
 
-### ![Lazy vim](https://www.lazyvim.org/)
+### Lazy vim
+
+![lazyvim](https://www.lazyvim.org/)
 
 mv ~/.config/nvim{,.bak}
 
