@@ -1,0 +1,18 @@
+[user]
+    name = Marco Pacchiotti
+    email = 57013700+pacchio1@users.noreply.github.com
+
+[core]
+    editor = code
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+
+[credential]
+    helper = store
