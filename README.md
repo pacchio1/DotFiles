@@ -45,5 +45,5 @@ tmux source ~/.tmux.conf
 ## Versionare i dot files
 
 '''bash
-ln -sf .\* ~
+ln -s /home/mark/git/DotFiles/.bashrc ~/.bashrc
 '''
