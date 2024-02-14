@@ -14,7 +14,7 @@ mv DotFiles/\* ..
 
 ## Pacchetti
 
-git neovim tmux terminator bat fzf exa
+git neovim neofetch tmux terminator bat fzf exa
 
 ### I3 customization
 

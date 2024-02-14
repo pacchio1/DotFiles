@@ -1,12 +1,20 @@
 ###### Install Package First ######
-
-### TO TEST !!! ###
-
+links(){
+    ln -sf ~/git/DotFiles/bashrc/daily.sh ~/.bashrc
+    ln -sf ~/git/DotFiles/.config/i3/config ~/.config/i3/config
+    ln -sf ~/git/DotFiles/.config/i3status/config ~/.config/i3status/config
+    ln -sf ~/git/DotFiles/.config/terminator/config ~/.config/terminator/config
+    ln -sf ~/git/DotFiles/.tmux.conf ~/.tmux.conf
+    ln -sf ~/git/DotFiles/.gitconfig ~/.gitconfig
+    mkdir .local/share/fonts
+    cp -r ~/git/DotFiles/.local/share/fonts/ ~/.local/share/fonts
+}
 
 ask_confirmation() {
     read -p "$1 (y/n): " response
     case "$response" in
         [yY])
+            links
             return 0 # Conferma
             ;;
         *)
@@ -17,13 +25,7 @@ ask_confirmation() {
 
 echo "Hai già installato tutti i pacchetti?"
 if ask_confirmation "Confermi?"; then
-    ln -sf ~/git/DotFiles/bashrc/daily.sh ~/.bashrc
-    ln -sf ~/git/DotFiles/* ~/
+    echo "hai confermato."
 else
     echo "Non hai confermato."
 fi
-
-
-
-
-
