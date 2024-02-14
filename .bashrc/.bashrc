@@ -93,3 +93,4 @@ alias npmi='npm install'
 alias npms='npm start'
 #Test git
 alias dff='gitf && cd DotFiles'
+alias catbash='cd && cat .bashrc'
