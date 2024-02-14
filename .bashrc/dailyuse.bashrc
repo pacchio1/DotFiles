@@ -47,8 +47,7 @@ if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
 fi
 #path variabili
 
-#vpn
-alias vpn-excentio="cd ~ && sudo openvpn marcopacchiotti.ovpn"
+
 
 #Alias 
 # enable color support of ls and also add handy aliases
@@ -62,6 +61,8 @@ if [ -x /usr/bin/dircolors ]; then
 	alias fgrep='fgrep --color=auto'
 	alias egrep='egrep --color=auto'
 fi
+#vpn
+alias vpn-excentio="cd ~ && sudo openvpn marcopacchiotti.ovpn"
 #commands
 alias ll='ls -la --color=auto'
 alias ls='exa'
