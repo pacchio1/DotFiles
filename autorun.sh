@@ -17,7 +17,7 @@ ask_confirmation() {
 
 echo "Hai già installato tutti i pacchetti?"
 if ask_confirmation "Confermi?"; then
-   ln -sf ~/git/DotFiles/bashrc/daily.sh ~/.bashrc
+    ln -sf ~/git/DotFiles/bashrc/daily.sh ~/.bashrc
     ln -sf ~/git/DotFiles/* ~/
 else
     echo "Non hai confermato."
