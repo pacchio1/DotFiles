@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# Confisurazione BASH
+########## Confisurazione BASH ##########
+
+
+
 # If not running interactively, don't do anything
 case $- in
 *i*) ;;
@@ -31,12 +34,24 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-#programmi
+
+
+########## programmi ##########
+
+
+
 # Dracula theme for Bash
 export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;108m\]\h\[$(tput sgr0)\]:\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;216m\]\w\[$(tput sgr0)\]\[\033[38;5;37m\]\$ \[$(tput sgr0)\]"
 
 neofetch
-#tmux
+
+#store credential git
+git config --global credential.helper store
+
+########## tmux ##########
+
+
+
 # Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
 if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
 	# Esegui il comando solo se la variabile non è impostata e non siamo già dentro una sessione tmux
@@ -47,7 +62,13 @@ if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
 fi
 #path variabili
 
-#Alias
+
+
+
+########## Alias ##########
+
+
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
