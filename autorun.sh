@@ -8,6 +8,9 @@ links(){
     ln -sf ~/git/DotFiles/.gitconfig ~/.gitconfig
     mkdir .local/share/fonts
     cp -r ~/git/DotFiles/.local/share/fonts/ ~/.local/share/fonts
+    mv ~/.config/nvim{,.bak}
+    git clone https://github.com/LazyVim/starter ~/.config/nvim
+    rm -rf ~/.config/nvim/.git
 }
 
 ask_confirmation() {
@@ -25,7 +28,7 @@ ask_confirmation() {
 
 echo "Hai già installato tutti i pacchetti?"
 if ask_confirmation "Confermi?"; then
-    echo "hai confermato."
+    echo "Fatto!"
 else
     echo "Non hai confermato."
 fi
