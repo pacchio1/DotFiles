@@ -3,7 +3,6 @@
 ########## Confisurazione BASH ##########
 
 
-
 # If not running interactively, don't do anything
 case $- in
 *i*) ;;
@@ -35,9 +34,7 @@ if ! shopt -oq posix; then
 fi
 
 
-
 ########## programmi ##########
-
 
 
 # Dracula theme for Bash
@@ -48,8 +45,8 @@ neofetch
 #store credential git
 git config --global credential.helper store
 
-########## tmux ##########
 
+########## tmux ##########
 
 
 #	# Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
@@ -64,9 +61,7 @@ git config --global credential.helper store
 
 
 
-
 ########## Alias ##########
-
 
 
 # enable color support of ls and also add handy aliases
