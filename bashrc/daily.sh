@@ -80,6 +80,7 @@ alias gitf='cd && cd git'
 alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 alias podf='cd && cd docker'
+alias dotfilef='gitf && cd DotFiles'
 
 #Angular
 # Load Angular CLI autocompletion.
@@ -91,5 +92,3 @@ alias nggs='ng generate service'
 #node
 alias npmi='npm install'
 alias npms='npm start'
-#Test git
-alias dff='gitf && cd DotFiles'
