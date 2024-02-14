@@ -18,7 +18,7 @@ git neovim tmux terminator bat fzf exa
 
 ### I3 customization
 
-i3 i3status i3status nitrogen thunar fameshot blueman
+i3 i3status i3status nitrogen thunar flameshot blueman
 
 ## Repo
 
@@ -41,5 +41,3 @@ tmux source ~/.tmux.conf
 ### prefix + I per installare
 
 ## Other
-
-
