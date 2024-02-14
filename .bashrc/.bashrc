@@ -92,4 +92,4 @@ alias nggs='ng generate service'
 alias npmi='npm install'
 alias npms='npm start'
 #Test git
-alias dotfile='gitf && cd DotFiles'
+alias dff='gitf && cd DotFiles'
