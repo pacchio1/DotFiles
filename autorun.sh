@@ -9,10 +9,24 @@ links(){
     cd && mkdir wallpaper
     mkdir .local/share/fonts
     cp -r ~/git/DotFiles/.local/share/fonts/ ~/.local/share/fonts
+
+    #nvim
     mv ~/.config/nvim{,.bak}
-    git clone https://github.com/LazyVim/starter ~/.config/nvim
-    rm -rf ~/.config/nvim/.git
+
+    #lazy git
+    #git clone https://github.com/LazyVim/starter ~/.config/nvim
+    #rm -rf ~/.config/nvim/.git
+
+    #nvchad
+    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+
+    # Uninstall
+    #rm -rf ~/.config/nvim
+    #rm -rf ~/.local/share/nvim
+
+
     # se devo muovere la cartella config di nvim farlo dopo questo commento
+
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     cd ~/wallpaper && mkdir wallpaper-drive && cd wallpaper-drive && wget https://drive.google.com/file/d/1GC5mJHJsalAbE9mIRFUqP-9knfNU1Ykr/view?usp=drive_link
 }
