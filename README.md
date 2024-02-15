@@ -12,11 +12,11 @@ i3 i3status i3status nitrogen thunar flameshot blueman
 
 ## Command
 
-## INSTAL THE PACKAGES BEFORE RUNNING THE SCRIPT
+### INSTAL THE PACKAGES BEFORE RUNNING THE SCRIPT
 
 git clone <https://github.com/pacchio1/DotFiles.git> && cd DotFiles && chmod +x autorun.sh
 
-## LOGIN IN I3 BEFORE RUNNING THE SCRIPT
+### LOGIN IN I3 BEFORE RUNNING THE SCRIPT
 
 ./autorun.sh
 
