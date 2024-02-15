@@ -6,14 +6,13 @@ links(){
     ln -sf ~/git/DotFiles/.config/terminator/config ~/.config/terminator/config
     ln -sf ~/git/DotFiles/.tmux.conf ~/.tmux.conf
     ln -sf ~/git/DotFiles/.gitconfig ~/.gitconfig
-    mkdir wallpaper
-    cp -sf ~/git/DotFiles/wallpaper/* ~/wallpaper
+    cd && mkdir wallpaper
     mkdir .local/share/fonts
     cp -r ~/git/DotFiles/.local/share/fonts/ ~/.local/share/fonts
     mv ~/.config/nvim{,.bak}
     git clone https://github.com/LazyVim/starter ~/.config/nvim
     rm -rf ~/.config/nvim/.git
-    # se devo muovere la cartella nvim farlo dopo questo commento
+    # se devo muovere la cartella config di nvim farlo dopo questo commento
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     cd ~/wallpaper && mkdir wallpaper-drive && cd wallpaper-drive && wget https://drive.google.com/file/d/1GC5mJHJsalAbE9mIRFUqP-9knfNU1Ykr/view?usp=drive_link
 }
