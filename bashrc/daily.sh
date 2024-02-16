@@ -108,3 +108,6 @@ alias nggs='ng generate service'
 #node
 alias npmi='npm install'
 alias npms='npm start'
+
+#utility
+alias n='cd && nano note'
