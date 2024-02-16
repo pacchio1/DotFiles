@@ -110,4 +110,4 @@ alias npmi='npm install'
 alias npms='npm start'
 
 #utility
-alias n='cd && vim note'
+alias n='cd && nano note'
