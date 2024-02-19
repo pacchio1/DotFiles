@@ -99,7 +99,8 @@ alias podf='cd && cd docker'
 alias dotfilef='gitf && cd DotFiles'
 alias bashrc='cd && vim .bashrc'
 alias i3c='vim ~/.config/i3/config'
-alias i3sc='vim ~/.config/i3status/config '
+alias i3sc='vim ~/.config/i3status/config'
+alias swagger='http-server -p 8080 swagger-editor'
 #Angular
 # Load Angular CLI autocompletion.
 source <(ng completion script)
