@@ -97,7 +97,9 @@ alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 alias podf='cd && cd docker'
 alias dotfilef='gitf && cd DotFiles'
-alias bashrc='nvim ~/.bashrc'
+alias bashrc='cd && vim .bashrc'
+alias i3c='vim ~/.config/i3/config'
+alias i3sc='vim ~/.config/i3status/config '
 #Angular
 # Load Angular CLI autocompletion.
 source <(ng completion script)
