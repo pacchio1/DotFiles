@@ -1,3 +1,5 @@
+# OTHER
+
 ## Indeciso
 
 terminator, zsh
@@ -8,14 +10,40 @@ git clone <https://github.com/NvChad/NvChad> ~/.config/nvim --depth 1 && nvim
 
 ### HoMyZsh
 
-sh -c "$(curl -fsSL <https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh>)"
+sh -c "\$(curl -fsSL <https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh>)"
 
-### YaY
+## Distro Repo expander
+
+### YaY - Pacman
 
 git clone <https://aur.archlinux.org/yay.git>
+
 cd yay
+
 makepkg -si
 
+### copr - fedora
+
+#### DNF Configuration
+
+sudo nano /etc/dnf/dnf.conf
+
+fastestmirror=True
+max_parallel_downloads=10
+defaultyes=True
+keepcache=True
+
+#### Rpm fusion -> https://rpmfusion.org/Configuration
+
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+##### Meta data
+
+sudo dnf groupupdate core
+
+#### Install Media Codecs
+
+sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 
 ## Repo
 
@@ -36,3 +64,7 @@ git clone <https://github.com/tmux-plugins/tpm> ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
 
 ## Other
+
+### Flatpak
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
