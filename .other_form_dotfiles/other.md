@@ -22,6 +22,8 @@ cd yay
 
 makepkg -si
 
+-------------------------
+
 ### copr - fedora
 
 #### DNF Configuration
@@ -29,7 +31,7 @@ makepkg -si
 ##### sudo nano /etc/dnf/dnf.conf
 
 <p>fastestmirror=True
-  
+
 max_parallel_downloads=10
 
 defaultyes=True
@@ -47,6 +49,16 @@ sudo dnf groupupdate core
 #### Install Media Codecs
 
 sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+
+------------------------
+
+### nala - debian
+
+echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list; wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
+
+sudo apt update && sudo apt install nala
+
+
 
 ## Repo
 
