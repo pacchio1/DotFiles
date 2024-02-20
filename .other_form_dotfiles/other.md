@@ -26,11 +26,14 @@ makepkg -si
 
 #### DNF Configuration
 
-sudo nano /etc/dnf/dnf.conf
+##### sudo nano /etc/dnf/dnf.conf
 
 <p>fastestmirror=True
+  
 max_parallel_downloads=10
+
 defaultyes=True
+
 keepcache=True</p>
 
 #### Rpm fusion -> https://rpmfusion.org/Configuration
