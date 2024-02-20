@@ -1,9 +1,3 @@
-######  Raspberrypi  ######
-
-#Personalizazione
-#free -h
-neofetch --ascii_distro raspbian --ascii_color 2 1 2 2 1 1
-df -h
 #Rainbow welcome message
 rainbow() {
     local string=$1
@@ -21,5 +15,3 @@ rainbow() {
 echo ""
 rainbow "Welcome to my Raspberry"
 echo ""
-echo ""
-echo "remember to use nala -> apt"
