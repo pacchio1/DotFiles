@@ -49,3 +49,5 @@ echo "Done"
 - Manjaro
 - Opensuse some prob whit exa (bashrc ls)
 - Raspbianos
+
+## if thunar dont change to dark mode mod + d -> lxapparence -> cambia dim caracht
