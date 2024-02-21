@@ -4,7 +4,7 @@ DotFiles, my config files
 
 ## Pacchetti
 
-git neovim neofetch tmux terminator bat fzf exa
+git neovim neofetch tmux kitty bat fzf exa
 
 ### I3 customization
 
