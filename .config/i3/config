@@ -221,26 +221,26 @@ exec_always nitrogen --restore
 ### My Bindings ###
 
 # start a terminal
-bindsym $mod+Return exec terminator -e bash
+bindsym $mod+Return exec kitty -e bash
 
 # not used
 
-#bindsym $mod+Shift+f exec --no-startup-id terminator -e fzf
+#bindsym $mod+Shift+f exec --no-startup-id kitty -e fzf
 
 # plain
 bindsym $mod+b exec firefox
 bindsym $mod+g exec github-desktop
 
 #control
-bindsym $mod+control+z exec --no-startup-id terminator -e nvim ~/.config/i3/config
-bindsym $mod+control+x exec --no-startup-id terminator -e nvim ~/.config/i3status/config
+bindsym $mod+control+z exec --no-startup-id kitty -e nvim ~/.config/i3/config
+bindsym $mod+control+x exec --no-startup-id kitty -e nvim ~/.config/i3status/config
 bindsym $mod+Control+l exec i3lock
 bindsym $mod+Control+a exec pavucontrol
 
 # Shift
 bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+v exec code
-bindsym $mod+Shift+n exec --no-startup-id terminator -e nvim
+bindsym $mod+Shift+n exec --no-startup-id kitty -e nvim
 bindsym $mod+Shift+d exec discord
 bindsym $mod+Shift+t exec telegram-desktop
 bindsym $mod+Shift+s exec flameshot

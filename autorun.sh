@@ -35,6 +35,12 @@ links(){
     # se devo muovere la cartella config di nvim farlo dopo questo commento
     #ln -sf ~/git/DotFiles/.config/nvim ~/.config/nvim
     #se avro personalizazioni
+
+    #kitty
+    cd kitty-master
+    cp dracula.conf diff.conf ~/.config/kitty/
+    echo "include dracula.conf" >> ~/.config/kitty/kitty.conf
+
 }
 
 ask_confirmation() {
