@@ -86,3 +86,14 @@ tmux source ~/.tmux.conf
 ### Flatpak
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+### backup
+
+#### debian / ubuntu
+dpkg -l | grep ^ii | awk '{print $2}' > ~/git/DotFiles/debpacket
+
+#### flatpak
+flatpak list --columns=name
+
+#### snap
+snap list | grep -v '^$' | awk {'print $1'}
