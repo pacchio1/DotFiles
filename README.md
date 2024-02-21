@@ -18,13 +18,21 @@ i3 i3status i3status nitrogen thunar flameshot blueman pulseaudio pavucontrol lx
 
 ### INSTAL THE PACKAGES BEFORE RUNNING THE SCRIPT
 
-#### 1: if not exist altredy
+cd
 
-cd && mkdir git && cd git
+mkdir git
 
-#### 2:
+cd git
 
-git clone <https://github.com/pacchio1/DotFiles.git> && cd DotFiles && chmod +x autorun.sh
+git clone <https://github.com/pacchio1/DotFiles.git>
+
+cd DotFiles
+
+chmod +x autorun.sh
+
+echo "Done"
+
+":) run ./autorun.sh"
 
 ### LOGIN IN I3 BEFORE RUNNING THE SCRIPT
 
