@@ -42,7 +42,7 @@ export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\
 
 
 x=$((RANDOM % 8))
-y=$((RANDOM % 7)+1)
+y=$((RANDOM % 7+1))
 z=$((RANDOM % 8))
 
 #echo "Random numbers: $x, $y, $z"
