@@ -102,6 +102,7 @@ alias i3c='vim ~/.config/i3/config'
 alias i3sc='vim ~/.config/i3status/config'
 alias swagger='http-server -p 8080 swagger-editor'
 alias code='codium'
+alias battery='vim +17 ~/.config/i3status/config'
 #Angular
 # Load Angular CLI autocompletion.
 source <(ng completion script)

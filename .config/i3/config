@@ -251,3 +251,4 @@ bindsym $mod+F1 exec firefox https://i3wm.org/docs/refcard.html
 bindsym $mod+F2 exec firefox https://tmuxcheatsheet.com/
 bindsym $mod+F3 exec firefox https://devhints.io/vim
 bindsym $mod+F4 exec firefox https://aur.archlinux.org/
+bindsym $mod+Control+F1 exec i3c
