@@ -41,9 +41,9 @@ fi
 export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;108m\]\h\[$(tput sgr0)\]:\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;216m\]\w\[$(tput sgr0)\]\[\033[38;5;37m\]\$ \[$(tput sgr0)\]"
 
 
-x=$((RANDOM % 6))
-y=$((RANDOM % 6))
-z=$((RANDOM % 6))
+x=$((RANDOM % 8))
+y=$((RANDOM % 7)+1)
+z=$((RANDOM % 8))
 
 #echo "Random numbers: $x, $y, $z"
 neofetch --ascii_colors "$x" "$y" "$z" "$z" "$y" "$x"
