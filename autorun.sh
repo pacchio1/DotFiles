@@ -11,7 +11,7 @@ links(){
     cd && mkdir wallpaper
     mkdir .local/share/fonts
     cp -r ~/git/DotFiles/.local/share/fonts/ ~/.local/share/fonts
-    cp -r ~/git/DotFiles/.gtkrc-2.0 ~/.gtkrc-2.0
+    cp -r ~/git/DotFiles/.gtkrc-2.0.mine ~/.gtkrc-2.0.mine
 
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
