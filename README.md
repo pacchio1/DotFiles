@@ -8,7 +8,11 @@ git neovim neofetch tmux terminator bat fzf exa
 
 ### I3 customization
 
-i3 i3status i3status nitrogen thunar flameshot blueman
+i3 i3status i3status nitrogen thunar flameshot blueman pulseaudio pavucontrol
+
+### USED - not needed
+
+[vscodeium](https://vscodium.com/) npm([Debian](https://deb.nodesource.com/)) angular
 
 ## Command
 
@@ -25,3 +29,13 @@ git clone <https://github.com/pacchio1/DotFiles.git> && cd DotFiles && chmod +x 
 ./autorun.sh
 
 ### IN TMUX prefix + I per installare
+
+## tested on
+
+- Debian
+- Ubuntu
+- Arch
+- Fedora
+- Manjaro
+- Opensuse
+- Raspbianos
