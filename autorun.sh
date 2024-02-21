@@ -1,6 +1,8 @@
 ###### Install Package First ######
 links(){
     ln -sf ~/git/DotFiles/bashrc/daily.sh ~/.bashrc
+    mkdir ~/.config/i3
+    mkdir ~/.config/i3status
     ln -sf ~/git/DotFiles/.config/i3/config ~/.config/i3/config
     ln -sf ~/git/DotFiles/.config/i3status/config ~/.config/i3status/config
     ln -sf ~/git/DotFiles/.config/terminator/config ~/.config/terminator/config
@@ -9,6 +11,7 @@ links(){
     cd && mkdir wallpaper
     mkdir .local/share/fonts
     cp -r ~/git/DotFiles/.local/share/fonts/ ~/.local/share/fonts
+    cp -r ~/git/DotFiles/.gtkrc-2.0 ~/.gtkrc-2.0
 
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
