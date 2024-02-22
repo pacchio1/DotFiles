@@ -1,22 +1,38 @@
 ###### Install Package First ######
 links(){
+    cd
+
+    #bash
     ln -sf ~/git/DotFiles/bashrc/daily.sh ~/.bashrc
+    thouch ~/.bash_aliases
+    mkdir ~/.config/fish
     ln -sf ~/git/DotFiles/bashrc/.bash_aliases ~/.bash_aliases
+    ln -sf ~/git/DotFiles/.config/fish/config.fish ~/.config/fish/config.fish
+
+    #i3
     mkdir ~/.config/i3
     mkdir ~/.config/i3status
     ln -sf ~/git/DotFiles/.config/i3/config ~/.config/i3/config
     ln -sf ~/git/DotFiles/.config/i3status/config ~/.config/i3status/config
+
+    #terminator
+    mkdir ~/.config/terminator
     ln -sf ~/git/DotFiles/.config/terminator/config ~/.config/terminator/config
-    ln -sf ~/git/DotFiles/.tmux.conf ~/.tmux.conf
+
+
+    #git
     ln -sf ~/git/DotFiles/.gitconfig ~/.gitconfig
-    cd && mkdir wallpaper
-    mkdir .local/share/fonts
+
+    # fonts
+    mkdir ~/.local/share/fonts
     cp -r ~/git/DotFiles/.local/share/fonts/ ~/.local/share/fonts
     cp -r ~/git/DotFiles/.gtkrc-2.0.mine ~/.gtkrc-2.0.mine
 
+    #tmux
+    ln -sf ~/git/DotFiles/.tmux.conf ~/.tmux.conf
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    cd ~/wallpaper && mkdir wallpaper-drive && cd wallpaper-drive && wget https://drive.google.com/file/d/1GC5mJHJsalAbE9mIRFUqP-9knfNU1Ykr/view?usp=drive_link
+
 
     #nvim
     mv ~/.config/nvim{,.bak}
@@ -45,7 +61,12 @@ links(){
     echo "include dracula.conf" >> ~/.config/kitty/kitty.conf
 
 }
-
+wallpa()
+{
+    mkdir ~/wallpaper
+    cd ~/wallpaper
+    git clone https://github.com/NotPacchio/WallPaper.git
+}
 ask_confirmation() {
     read -p "$1 (y/n): " response
     case "$response" in
@@ -58,9 +79,26 @@ ask_confirmation() {
             ;;
     esac
 }
-
-echo "Hai già installato tutti i pacchetti?"
-if ask_confirmation "Confermi?"; then
+ask_confirmation_wallpaper() {
+    read -p "$1 (y/n): " response
+    case "$response" in
+        [yY])
+            wallpa
+            return 0 # Conferma
+            ;;
+        *)
+            return 1 # Non conferma
+            ;;
+    esac
+}
+echo "Hai già installato tutti i pacchetti? (specificati nel readme)"
+if ask_confirmation "Confermi? N"; then
+    echo "Fatto!"
+else
+    echo "Non hai confermato."
+fi
+echo "desideri anche gli sfondi"
+if ask_confirmation_wallpaper "Confermi? N"; then
     echo "Fatto!"
 else
     echo "Non hai confermato."
