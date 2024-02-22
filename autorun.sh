@@ -13,6 +13,7 @@ links(){
     mkdir ~/.config/i3
     mkdir ~/.config/i3status
     ln -sf ~/git/DotFiles/.config/i3/config ~/.config/i3/config
+    ln -sf ~/git/DotFiles/.config/i3/mine.conf ~/.config/i3/mine.conf
     ln -sf ~/git/DotFiles/.config/i3status/config ~/.config/i3status/config
 
     #terminator
