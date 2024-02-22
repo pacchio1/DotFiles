@@ -239,7 +239,7 @@ bindsym $mod+Control+a exec pavucontrol
 
 # Shift
 bindsym $mod+Shift+f exec thunar
-bindsym $mod+Shift+v exec code
+bindsym $mod+Shift+v exec codium
 bindsym $mod+Shift+n exec --no-startup-id kitty -e nvim
 bindsym $mod+Shift+d exec discord
 bindsym $mod+Shift+t exec telegram-desktop
