@@ -219,7 +219,7 @@ bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F
 exec_always nitrogen --restore
 
 ### My Bindings ###
-
+#. ~/.config/i3/mine.conf -> non funziona capire come si faccia
 # start a terminal
 bindsym $mod+Return exec kitty -e bash
 
