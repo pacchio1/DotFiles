@@ -33,9 +33,9 @@ links(){
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-
-    #nvim
-    mv ~/.config/nvim{,.bak}
+    #neofetch
+    mkdir ~/.config/neofetch
+    ln -sf ~/git/DotFiles/.config/neofetch/config.conf ~/.config/neofetch/config.conf
 
     #lazy git
     #git clone https://github.com/LazyVim/starter ~/.config/nvim
@@ -57,6 +57,8 @@ wallpa()
 }
 nvimconf()
 {
+    #nvim
+    mv ~/.config/nvim{,.bak}
     #nvchad
     git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
