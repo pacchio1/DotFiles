@@ -1,6 +1,7 @@
 ###### Install Package First ######
 links(){
     ln -sf ~/git/DotFiles/bashrc/daily.sh ~/.bashrc
+    ln -sf ~/git/DotFiles/bashrc/.bash_aliases ~/.bash_aliases
     mkdir ~/.config/i3
     mkdir ~/.config/i3status
     ln -sf ~/git/DotFiles/.config/i3/config ~/.config/i3/config
@@ -38,7 +39,7 @@ links(){
 
     #kitty
     mkdir ~/.config/kitty
-    
+
     cd ~/git/DotFiles/kitty-master
     cp dracula.conf diff.conf ~/.config/kitty/
     echo "include dracula.conf" >> ~/.config/kitty/kitty.conf
