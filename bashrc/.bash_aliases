@@ -42,4 +42,4 @@ alias npms='npm start'
 #utility
 alias n='cd && nano note'
 alias supergitpush='gadd && gc "super git push" && gpush'
-alias vwallpaper='cd ~/wallpaper/WallPaper'
+alias murocarta='cd ~/wallpaper/WallPaper'
