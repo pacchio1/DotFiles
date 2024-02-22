@@ -37,6 +37,8 @@ links(){
     #se avro personalizazioni
 
     #kitty
+    mkdir ~/.config/kitty
+    
     cd ~/git/DotFiles/kitty-master
     cp dracula.conf diff.conf ~/.config/kitty/
     echo "include dracula.conf" >> ~/.config/kitty/kitty.conf
