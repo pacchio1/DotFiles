@@ -98,7 +98,7 @@ ask_confirmation_wallpaper() {
     read -p "$1 (y/N): " response
     case "$response" in
         [yY])
-            nvimconf
+            wallpa
             return 0 # Conferma
             ;;
         *)
