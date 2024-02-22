@@ -41,18 +41,6 @@ links(){
     #git clone https://github.com/LazyVim/starter ~/.config/nvim
     #rm -rf ~/.config/nvim/.git
 
-    #nvchad
-    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
-
-    # Uninstall
-    #rm -rf ~/.config/nvim
-    #rm -rf ~/.local/share/nvim
-
-
-    # se devo muovere la cartella config di nvim farlo dopo questo commento
-    #ln -sf ~/git/DotFiles/.config/nvim ~/.config/nvim
-    #se avro personalizazioni
-
     #kitty
     mkdir ~/.config/kitty
 
@@ -67,8 +55,23 @@ wallpa()
     cd ~/wallpaper
     git clone https://github.com/NotPacchio/WallPaper.git
 }
+nvimconf()
+{
+    #nvchad
+    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+
+    # Uninstall
+    #rm -rf ~/.config/nvim
+    #rm -rf ~/.local/share/nvim
+
+
+    # se devo muovere la cartella config di nvim farlo dopo questo commento
+    #ln -sf ~/git/DotFiles/.config/nvim ~/.config/nvim
+    #se avro personalizazioni
+
+}
 ask_confirmation() {
-    read -p "$1 (y/n): " response
+    read -p "$1 (y/N): " response
     case "$response" in
         [yY])
             links
@@ -79,11 +82,23 @@ ask_confirmation() {
             ;;
     esac
 }
-ask_confirmation_wallpaper() {
-    read -p "$1 (y/n): " response
+ask_confirmation_nvim() {
+    read -p "$1 (y/N): " response
     case "$response" in
         [yY])
-            wallpa
+            nvimconf
+            return 0 # Conferma
+            ;;
+        *)
+            return 1 # Non conferma
+            ;;
+    esac
+}
+ask_confirmation_wallpaper() {
+    read -p "$1 (y/N): " response
+    case "$response" in
+        [yY])
+            nvimconf
             return 0 # Conferma
             ;;
         *)
@@ -92,13 +107,19 @@ ask_confirmation_wallpaper() {
     esac
 }
 echo "Hai già installato tutti i pacchetti? (specificati nel readme)"
-if ask_confirmation "Confermi? N"; then
+if ask_confirmation "Confermi?"; then
+    echo "Fatto!"
+else
+    echo "Non hai confermato."
+fi
+echo "desideri configurare neovim con nvchad?"
+if ask_confirmation_nvim "Confermi?"; then
     echo "Fatto!"
 else
     echo "Non hai confermato."
 fi
 echo "desideri anche gli sfondi"
-if ask_confirmation_wallpaper "Confermi? N"; then
+if ask_confirmation_wallpaper "Confermi?"; then
     echo "Fatto!"
 else
     echo "Non hai confermato."
