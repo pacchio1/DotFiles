@@ -6,7 +6,7 @@ git neovim neofetch tmux kitty bat fzf exa fish locate
 
 ### I3 customization
 i3 i3status i3status nitrogen thunar flameshot blueman  pavucontrol lxappearance 
-#### sometimes: pulseaudioNetworkManager
+#### sometimes: pulseaudio NetworkManager
 
 ### USED - not needed
 [vscodeium](https://vscodium.com/) npm([Debian last version](https://deb.nodesource.com/)) angular [lazygit](https://github.com/jesseduffield/lazygit) ranger(cli file manager) apropos(man-db)
