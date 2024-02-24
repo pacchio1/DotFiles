@@ -230,7 +230,7 @@ bindsym $mod+Return exec kitty -e bash
 # plain
 bindsym $mod+b exec firefox
 bindsym $mod+g exec github-desktop
-
+bindsym $mod+z exec kitty
 #control
 bindsym $mod+control+z exec --no-startup-id kitty -e nvim ~/.config/i3/config
 bindsym $mod+control+x exec --no-startup-id kitty -e nvim ~/.config/i3status/config
