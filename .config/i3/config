@@ -198,7 +198,7 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
 bar {
-    position top
+    position bottom
     status_command i3status
     font pango:JetBrainsMono Nerd Font Propo Thin 10
   colors {
