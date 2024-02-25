@@ -3,7 +3,7 @@
 #vpn
 alias vpn-excentio="cd ~ && sudo openvpn marcopacchiotti.ovpn"
 #commands
-alias ls='exa'
+alias ls='exa -a'
 alias ll='ls -la --color=auto'
 alias gc='git commit -m'
 alias gadd='git add .'
