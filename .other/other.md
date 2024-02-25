@@ -53,6 +53,8 @@ sudo dnf groupupdate core
 
 sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 
+
+### Pacchetti mancanti gcc e make
 ------------------------
 
 ### nala - debian
