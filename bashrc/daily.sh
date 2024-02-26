@@ -47,7 +47,8 @@ export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\
 
 #echo "Random numbers: $x, $y, $z"
 #neofetch --ascii_colors "$x" "$y" "$z" "$z" "$y" "$x"
-neofetch
+##### ----------- basta ------------------------ 
+#neofetch
 
 #store credential git
 git config --global credential.helper store
