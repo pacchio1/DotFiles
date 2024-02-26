@@ -53,6 +53,10 @@ export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\
 #store credential git
 git config --global credential.helper store
 
+#angular
+if command -v ng &> /dev/null; then
+    source <(ng completion script)
+fi
 
 ########## tmux ##########
 
@@ -84,4 +88,3 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-source <(ng completion script)
