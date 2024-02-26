@@ -35,6 +35,7 @@ alias nggc='ng generate component'
 alias nggm='ng generate module'
 alias nggs='ng generate service'
 alias dotnote='dotf && cd .other && vim .note.md '
+alias l='clear'
 #node
 alias npmi='npm install'
 alias npms='npm start'
