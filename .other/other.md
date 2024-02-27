@@ -1,17 +1,5 @@
 # OTHER
 
-## Indeciso
-
-terminator, zsh
-
-### NvChad
-
-git clone <https://github.com/NvChad/NvChad> ~/.config/nvim --depth 1 && nvim
-
-### HoMyZsh
-
-sh -c "\$(curl -fsSL <https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh>)"
-
 ## Distro Repo expander
 
 ### YaY - Pacman
@@ -53,8 +41,6 @@ sudo dnf groupupdate core
 
 sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 
-
-### Pacchetti mancanti gcc e make
 ------------------------
 
 ### nala - debian
@@ -63,9 +49,22 @@ echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.l
 
 sudo apt update && sudo apt install nala
 
+-------------------------
 
+### flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 ## Repo
+
+
+### NvChad
+
+git clone <https://github.com/NvChad/NvChad> ~/.config/nvim --depth 1 && nvim
+
+### HoMyZsh
+
+sh -c "\$(curl -fsSL <https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh>)"
+
 
 ### Lazy vim
 
@@ -83,7 +82,7 @@ git clone <https://github.com/tmux-plugins/tpm> ~/.tmux/plugins/tpm
 
 tmux source ~/.tmux.conf
 
-## Other
+## Other - Get number of packet installed
 
 ### Flatpak
 
