@@ -47,7 +47,7 @@ export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\
 
 #echo "Random numbers: $x, $y, $z"
 #neofetch --ascii_colors "$x" "$y" "$z" "$z" "$y" "$x"
-##### ----------- basta ------------------------ 
+##### ----------- basta ------------------------
 #neofetch
 
 #store credential git
@@ -61,15 +61,15 @@ fi
 ########## tmux ##########
 
 
-#	# Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
-#	if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
-#		# Esegui il comando solo se la variabile non è impostata e non siamo già dentro una sessione tmux
-#		tmux
-#
-#		# Imposta la variabile di controllo
-#		export TMUX_STARTED=1
-#	fi
-#	#path variabili
+# Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
+if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
+	# Esegui il comando solo se la variabile non è impostata e non siamo già dentro una sessione tmux
+	tmux
+
+	# Imposta la variabile di controllo
+	export TMUX_STARTED=1
+fi
+#path variabili
 
 
 
