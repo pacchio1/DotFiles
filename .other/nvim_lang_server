@@ -1,0 +1,15 @@
+#C/C++
+sudo .... install clangd 
+
+#Bash
+npm install -g bash-language-server
+
+#Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup component add rust-src
+cargo install --git https://github.com/rust-analyzer/rust-analyzer.git ra_cli
+
+# .config/nvim/init.lua
+require'lspconfig'.clangd.setup{}
+require'lspconfig'.bashls.setup{}
+require'lspconfig'.rust_analyzer.setup{}
