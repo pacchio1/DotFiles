@@ -9,3 +9,4 @@ creare una roba tipo spotlight per ricercare diretamente su firefox
 
 configurare neofetch
 
+personalizare lo script per installazione tipo dispositivo es rasp / daily / vm ....
