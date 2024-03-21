@@ -2,6 +2,7 @@
 
 #vpn
 alias vpn-excentio="cd ~ && sudo openvpn marcopacchiotti.ovpn"
+
 #commands
 alias ls='exa -a'
 alias ll='ls -la --color=auto'
@@ -38,11 +39,6 @@ alias dotnote='dotf && cd .other && vim .note.md '
 alias l='clear'
 alias v='vim'
 
-
-
-
-
-
 #node
 alias npmi='npm install'
 alias npms='npm start'
@@ -51,3 +47,6 @@ alias npms='npm start'
 alias n='cd && nano .note'
 alias supergitpush='gadd && gc "super git push" && gpush'
 alias murocarta='cd ~/wallpaper/WallPaper'
+
+#tmp
+alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
