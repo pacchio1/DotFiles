@@ -88,3 +88,4 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
+. "$HOME/.cargo/env"
