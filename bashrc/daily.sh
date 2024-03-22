@@ -34,6 +34,40 @@ if ! shopt -oq posix; then
 fi
 
 
+#path variabili
+
+########## tmux ##########
+
+
+# Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
+if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
+	# Esegui il comando solo se la variabile non è impostata e non siamo già dentro una sessione tmux
+	tmux
+
+	# Imposta la variabile di controllo
+	export TMUX_STARTED=1
+fi
+
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
+
+
+########## Alias ##########
+
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	#alias dir='dir --color=auto'
+	#alias vdir='vdir --color=auto'
+
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
+fi
+
 ########## programmi ##########
 
 
@@ -58,38 +92,9 @@ if command -v ng &> /dev/null; then
     source <(ng completion script)
 fi
 
-########## tmux ##########
 
-
-# Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
-if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
-	# Esegui il comando solo se la variabile non è impostata e non siamo già dentro una sessione tmux
-	tmux
-
-	# Imposta la variabile di controllo
-	export TMUX_STARTED=1
+if command -v sdkman &> /dev/null; then
+  #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+  export SDKMAN_DIR="$HOME/.sdkman"
+  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
-#path variabili
-
-
-
-########## Alias ##########
-
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	alias ls='ls --color=auto'
-	#alias dir='dir --color=auto'
-	#alias vdir='vdir --color=auto'
-
-	alias grep='grep --color=auto'
-	alias fgrep='fgrep --color=auto'
-	alias egrep='egrep --color=auto'
-fi
-
-. "$HOME/.cargo/env"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
