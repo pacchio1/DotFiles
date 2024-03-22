@@ -47,6 +47,7 @@ alias npms='npm start'
 alias n='cd && nano .note'
 alias supergitpush='gadd && gc "super git push" && gpush'
 alias murocarta='cd ~/wallpaper/WallPaper'
+alias killtmux='tmux kill-ses -t'
 
 #tmp
 alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
