@@ -50,5 +50,8 @@ alias murocarta='cd ~/wallpaper/WallPaper'
 alias killtmux='tmux kill-ses -t'
 export portatile=192.168.1.22
 alias sshPortatile='ssh mark@$portatile'
+export docker_inuso='citofonoweb'
+alias execDocker='docker exec -it $docker_inuso /bin/bash'
+
 #tmp
 alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
