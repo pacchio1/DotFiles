@@ -39,18 +39,18 @@ fi
 ########## tmux ##########
 
 
-# # Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
-# if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
-# 	# Esegui il comando solo se la variabile non è impostata e non siamo già dentro una sessione tmux
-# 	tmux
+# Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
+if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
+	# Esegui il comando solo se la variabile non è impostata e non siamo già dentro una sessione tmux
+	tmux
 
-# 	# Imposta la variabile di controllo
-# 	export TMUX_STARTED=1
-# fi
+	# Imposta la variabile di controllo
+	export TMUX_STARTED=1
+fi
 
-# if [ -f "$HOME/.cargo/env" ]; then
-#   . "$HOME/.cargo/env"
-# fi
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
 
 
 ########## Alias ##########
@@ -93,8 +93,7 @@ if command -v ng &> /dev/null; then
 fi
 
 
-if command -v sdkman &> /dev/null; then
-  #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-  export SDKMAN_DIR="$HOME/.sdkman"
-  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-fi
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
