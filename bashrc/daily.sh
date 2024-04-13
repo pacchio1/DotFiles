@@ -38,8 +38,9 @@ fi
 #doom emacs
 export PATH=$PATH:~/.config/emacs/bin
 #rust
-. "$HOME/.cargo/env"
-
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
 
 ########## tmux ##########
 
