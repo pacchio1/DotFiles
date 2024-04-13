@@ -2,7 +2,6 @@
 
 ########## Confisurazione BASH ##########
 
-
 # If not running interactively, don't do anything
 case $- in
 *i*) ;;
@@ -34,7 +33,13 @@ if ! shopt -oq posix; then
 fi
 
 
-#path variabili
+########  path variabili ##
+
+#doom emacs
+export PATH=$PATH:~/.config/emacs/bin
+#rust
+. "$HOME/.cargo/env"
+
 
 ########## tmux ##########
 
@@ -57,9 +62,6 @@ if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
 	export TMUX_STARTED=1
 fi
 
-if [ -f "$HOME/.cargo/env" ]; then
-  . "$HOME/.cargo/env"
-fi
 
 
 ########## Alias ##########

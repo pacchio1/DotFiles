@@ -38,7 +38,7 @@ alias nggs='ng generate service'
 alias dotnote='dotf && cd .other && vim .note.md '
 alias l='clear'
 alias v='vim'
-
+alias emacs="doom run"
 #node
 alias npmi='npm install'
 alias npms='npm start'
