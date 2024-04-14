@@ -38,9 +38,7 @@ links(){
     mkdir ~/.config/neofetch
     ln -sf ~/git/DotFiles/.config/neofetch/config.conf ~/.config/neofetch/config.conf
 
-    #lazy git
-    #git clone https://github.com/LazyVim/starter ~/.config/nvim
-    #rm -rf ~/.config/nvim/.git
+
 
     #kitty
     mkdir ~/.config/kitty
@@ -58,16 +56,27 @@ wallpa()
 }
 nvimconf()
 {
-    #nvim
-    mv ~/.config/nvim{,.bak}
-    #nvchad
-    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
-
     # Uninstall
-    #rm -rf ~/.config/nvim
-    #rm -rf ~/.local/share/nvim
+    rm -rf ~/.config/nvim
+    rm -rf ~/.local/share/nvim
+    #nvim
+    # required
+    mv ~/.config/nvim{,.bak}
+
+    # optional but recommended
+    mv ~/.local/share/nvim{,.bak}
+    mv ~/.local/state/nvim{,.bak}
+    mv ~/.cache/nvim{,.bak}
+    #nvchad
+    #git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+
+    #lazy git
+    git clone https://github.com/LazyVim/starter ~/.config/nvim
+
+    rm -rf ~/.config/nvim/.git
 
 
+    nvim
     # se devo muovere la cartella config di nvim farlo dopo questo commento
     #ln -sf ~/git/DotFiles/.config/nvim ~/.config/nvim
     #se avro personalizazioni
@@ -115,7 +124,7 @@ if ask_confirmation "Confermi?"; then
 else
     echo "Non hai confermato."
 fi
-echo "desideri configurare neovim con nvchad?"
+echo "desideri configurare neovim?"
 if ask_confirmation_nvim "Confermi?"; then
     echo "Fatto!"
 else
