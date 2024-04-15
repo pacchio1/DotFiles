@@ -46,7 +46,7 @@ fi
 
 
 # Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
-if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
+if [ -z "$TMUX" ]; then
 	# Esegui il comando solo se la variabile non è impostata e non siamo già dentro una sessione tmux
 	#!/bin/bash
 
@@ -60,7 +60,6 @@ if [ -z "$TMUX_STARTED" ] && [ -z "$TMUX" ]; then
 	fi
 
 	# Imposta la variabile di controllo
-	export TMUX_STARTED=1
 fi
 
 
