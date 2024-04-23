@@ -244,7 +244,7 @@ bindsym $mod+Shift+n exec --no-startup-id kitty -e nvim
 bindsym $mod+Shift+d exec discord
 bindsym $mod+Shift+t exec telegram-desktop
 bindsym $mod+Shift+s exec flameshot
-
+bindsym $mod+Shift+control+d exec gnome-software
 
 #function
 bindsym $mod+F1 exec firefox https://i3wm.org/docs/refcard.html
