@@ -83,6 +83,7 @@ custom_theme() {
 	cp -r .themes/* ~/.themes
 	echo "setup per flatpak solo per gnome"
 	sudo flatpak override --filesystem=~/.themes
+	gnome-tweaks
 }
 ask_confirmation() {
 	read -p "$1 (y/N): " response
