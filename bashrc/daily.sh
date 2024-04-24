@@ -32,18 +32,16 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-
 ########  path variabili ##
 
 #doom emacs
 export PATH=$PATH:~/.config/emacs/bin
 #rust
 if [ -f "$HOME/.cargo/env" ]; then
-  . "$HOME/.cargo/env"
+	. "$HOME/.cargo/env"
 fi
-
+#export GTK_THEME=Yaru-Purple-dark
 ########## tmux ##########
-
 
 # Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
 if [ -z "$TMUX" ]; then
@@ -52,20 +50,17 @@ if [ -z "$TMUX" ]; then
 
 	# Controlla se tmux ls ha un risultato
 	if tmux ls 2>/dev/null; then
-	# Se c'è una sessione esistente, collegati ad essa
-	tmux a -t 0
+		# Se c'è una sessione esistente, collegati ad essa
+		tmux a -t 0
 	else
-	# Se non ci sono sessioni, avviane una nuova
-	tmux
+		# Se non ci sono sessioni, avviane una nuova
+		tmux
 	fi
 
 	# Imposta la variabile di controllo
 fi
 
-
-
 ########## Alias ##########
-
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -81,10 +76,8 @@ fi
 
 ########## programmi ##########
 
-
 # Dracula theme for Bash
 export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;108m\]\h\[$(tput sgr0)\]:\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;216m\]\w\[$(tput sgr0)\]\[\033[38;5;37m\]\$ \[$(tput sgr0)\]"
-
 
 #x=$((RANDOM % 8))
 #y=$((RANDOM % 7+1))
@@ -99,12 +92,10 @@ export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\
 git config --global credential.helper store
 
 #angular
-if command -v ng &> /dev/null; then
-    source <(ng completion script)
+if command -v ng &>/dev/null; then
+	source <(ng completion script)
 fi
-
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
