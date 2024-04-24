@@ -5,7 +5,7 @@ DotFiles, my config files
 git neovim neofetch tmux kitty bat fzf exa fish locate
 
 ### I3 customization
-i3 i3status i3status nitrogen thunar flameshot blueman  pavucontrol lxappearance 
+i3 i3status i3status nitrogen thunar flameshot blueman  pavucontrol lxappearance
 #### sometimes: pulseaudio NetworkManager
 
 ### USED - not needed
@@ -27,8 +27,6 @@ cd DotFiles
 chmod +x autorun.sh
 
 echo "Done"
-
-### LOGIN IN I3 BEFORE RUNNING THE SCRIPT
 
 > ./autorun.sh
 

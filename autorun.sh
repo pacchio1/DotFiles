@@ -136,6 +136,7 @@ customization() {
 }
 
 echo "Hai già installato tutti i pacchetti? (specificati nel readme)"
+eccho "\n git neovim neofetch tmux kitty bat fzf exa fish locate"
 if ask_confirmation "Confermi?"; then
 	echo "Fatto!"
 else
