@@ -3,7 +3,7 @@
     email = 57013700+pacchio1@users.noreply.github.com
 
 [core]
-    editor = code
+    editor = codium
 
 [alias]
     co = checkout
