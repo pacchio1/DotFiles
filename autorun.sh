@@ -77,12 +77,25 @@ nvimconf() {
 
 }
 custom_theme() {
+
 	dotf
+	#dracula + papirus: icons and themes
 	tar -xvf dracula_theme.tar.gz
 	cp -r .icons/* ~/.icons
 	cp -r .themes/* ~/.themes
-	echo "setup per flatpak solo per gnome"
-	sudo flatpak override --filesystem=~/.themes
+
+	#command on https://www.gnome-look.org/p/1687249/
+	gsettings set org.gnome.desktop.interface gtk-theme Dracula
+	gsettings set org.gnome.desktop.wm.preferences theme Dracula
+
+	#setup per flatpak solo per gnome
+	#sudo flatpak override --filesystem=~/.
+
+	#extension
+	gitf
+	git clone https://github.com/NotPacchio/gnome-extension.git /home/mark/.local/share/gnome-shell/extensions
+
+	#gnome-tweaks
 	gnome-tweaks
 }
 ask_confirmation() {

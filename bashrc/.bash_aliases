@@ -50,6 +50,7 @@ alias murocarta='cd ~/wallpaper/WallPaper'
 alias killtmux='tmux kill-ses -t'
 export portatile=192.168.1.22
 alias sshPortatile='ssh mark@$portatile'
+alias gnome-extensions-sync="cp -r /home/mark/.local/share/gnome-shell/extensions/* /home/mark/git/gnome-extension && cd /home/mark/git/gnome-extension && supergitpush"
 
 #tmp
 alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
