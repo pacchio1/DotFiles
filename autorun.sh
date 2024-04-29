@@ -167,7 +167,7 @@ if ask_confirmation_wallpaper "Confermi?"; then
 else
 	echo "Non hai confermato."
 fi
-echo "desideri anche icons e themes?"
+echo "desideri anche icons e themes? (gnome)"
 if customization "Confermi?"; then
 	echo "Fatto!"
 else
