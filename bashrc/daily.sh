@@ -40,7 +40,8 @@ export PATH=$PATH:~/.config/emacs/bin
 if [ -f "$HOME/.cargo/env" ]; then
 	. "$HOME/.cargo/env"
 fi
-#export GTK_THEME=Yaru-Purple-dark
+export GTK_THEME=Dracula
+export ICON_THEME=Papirus
 ########## tmux ##########
 
 # Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux

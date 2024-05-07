@@ -7,7 +7,7 @@
     "./plugins/new/core.js": true,
     "./plugins/next/core.js": false,
     "./plugins/previous/core.js": false,
-    "./plugins/trash/core.js": false,
+    "./plugins/trash/core.js": true,
     "./plugins/unloaded/core.js": true,
     "./plugins/youtube/core.js": true,
     "audio": true,
@@ -42,7 +42,61 @@
     "startup-unpinned": true,
     "tab.context": true,
     "tmp_disable": 0,
-    "trash.period": 24,
+    "trash.keys": {
+      "https://www.google.com/search?client=firefox-b-d&q=monkey+type": [
+        1715089667439,
+        3600
+      ],
+      "https://docs.google.com/document/d/1Jw3R4Mir3AIDKfHXwMZUlSjZQvyulnY01xWsh8pVza4/edit": [
+        1715089667439,
+        3600
+      ],
+      "https://github.com/pacchio1/cpp-dashboard/tree/main/src/main/java/com/certichain/dppdashboard": [
+        1715089667439,
+        3600
+      ],
+      "https://www.baeldung.com/java-modelmapper": [
+        1715089667439,
+        3600
+      ],
+      "https://mvnrepository.com/artifact/io.springfox/springfox-swagger2/3.0.0": [
+        1715089667439,
+        3600
+      ],
+      "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpStatus.html": [
+        1715089667439,
+        3600
+      ],
+      "https://git.excentio.com/certichain/dppprinter": [
+        1715089667439,
+        3600
+      ],
+      "https://bell-sw.com/blog/documenting-rest-api-with-swagger-in-spring-boot-3/": [
+        1715089667439,
+        3600
+      ],
+      "https://gemini.google.com/app/5cd32e9df2619bfd": [
+        1715089667439,
+        3600
+      ],
+      "https://github.com/ArmCord/ArmCord": [
+        1715089667439,
+        3600
+      ],
+      "https://simplifyingtechcode.wordpress.com/2023/03/04/how-to-export-pdf-using-jasperreports-spring-boot/": [
+        1715089667439,
+        3600
+      ],
+      "undefined": [
+        1715089667439,
+        3600
+      ],
+      "https://community.jaspersoft.com/download-jaspersoft/": [
+        1715089667439,
+        3600
+      ]
+    },
+    "trash.period": 1,
     "trash.unloaded": false,
     "trash.whitelist-url": [],
     "whitelist": [],
