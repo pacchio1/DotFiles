@@ -1,6 +1,6 @@
 # OTHER
 
-## Distro Repo expander
+Distro Repo expander
 
 ## YaY - Pacman
 
