@@ -33,7 +33,7 @@
     "online": false,
     "page.context": false,
     "paused": false,
-    "period": 480,
+    "period": 900,
     "pinned": false,
     "prepends": "💤",
     "simultaneous-jobs": 10,
@@ -48,10 +48,6 @@
         3600
       ],
       "https://docs.google.com/document/d/1Jw3R4Mir3AIDKfHXwMZUlSjZQvyulnY01xWsh8pVza4/edit": [
-        1715089667439,
-        3600
-      ],
-      "https://github.com/pacchio1/cpp-dashboard/tree/main/src/main/java/com/certichain/dppdashboard": [
         1715089667439,
         3600
       ],
@@ -75,10 +71,6 @@
         1715089667439,
         3600
       ],
-      "https://gemini.google.com/app/5cd32e9df2619bfd": [
-        1715089667439,
-        3600
-      ],
       "https://github.com/ArmCord/ArmCord": [
         1715089667439,
         3600
@@ -87,12 +79,20 @@
         1715089667439,
         3600
       ],
-      "undefined": [
+      "https://community.jaspersoft.com/download-jaspersoft/": [
         1715089667439,
         3600
       ],
-      "https://community.jaspersoft.com/download-jaspersoft/": [
-        1715089667439,
+      "https://www.google.com/drive/": [
+        1715091467522,
+        3600
+      ],
+      "undefined": [
+        1715091884221,
+        3600
+      ],
+      "https://drive.google.com/drive/search?q=immobiliare": [
+        1715091884221,
         3600
       ]
     },
