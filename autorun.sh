@@ -95,6 +95,7 @@ custom_theme() {
 	gitf
 	git clone https://github.com/NotPacchio/gnome-extension.git /home/mark/.local/share/gnome-shell/extensions
 
+	cp ~/git/DotFiles/.config/.gtkrc-2.0 ~
 	#gnome-tweaks
 	gnome-tweaks
 }
