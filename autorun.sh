@@ -93,8 +93,10 @@ custom_theme() {
 
 	#extension
 	gitf
-	git clone https://github.com/NotPacchio/gnome-extension.git /home/mark/.local/share/gnome-shell/extensions
-
+	git clone https://github.com/NotPacchio/gnome-extension.git
+	cd gnome-extension
+	sudo cp -r * /home/mark/.local/share/gnome-shell/extensions
+	cd /home/mark/.local/share/gnome-shell/extensions && sudo chown $USER:$USER *
 	#gnome-tweaks
 	gnome-tweaks
 }
