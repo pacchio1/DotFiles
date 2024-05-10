@@ -42,6 +42,7 @@ if [ -f "$HOME/.cargo/env" ]; then
 fi
 export GTK_THEME=Dracula
 export ICONS_THEME=Papirus
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"

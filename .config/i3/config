@@ -249,7 +249,7 @@ bindsym $mod+Shift+control+d exec gnome-software
 #function
 bindsym $mod+F1 exec firefox https://i3wm.org/docs/refcard.html
 bindsym $mod+F2 exec firefox https://tmuxcheatsheet.com/
-bindsym $mod+F3 exec firefox https://devhints.io/vim
+bindsym $mod+F3 exec firefox https://hamwaves.com/vim.tutorial/en/index.html
 bindsym $mod+F4 exec firefox https://aur.archlinux.org/
 bindsym $mod+F5 exec firefoxhttps://cheatography.com/stepk/cheat-sheets/vim-nerdtree/
 

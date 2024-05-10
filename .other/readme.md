@@ -1,8 +1,8 @@
 # OTHER
 
-## Distro Repo expander
+Distro Repo expander
 
-### YaY - Pacman
+## YaY - Pacman
 
 git clone <https://aur.archlinux.org/yay.git>
 
@@ -12,7 +12,7 @@ makepkg -si
 
 -------------------------
 
-### copr - fedora
+## copr - fedora
 
 #### DNF Configuration
 
@@ -43,7 +43,7 @@ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=Pack
 
 ------------------------
 
-### nala - debian
+## nala - debian
 
 echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list; wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
 
@@ -51,7 +51,7 @@ sudo apt update && sudo apt install nala
 
 -------------------------
 
-### flatpak
+## flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 ## Repo
@@ -88,7 +88,7 @@ tmux source ~/.tmux.conf
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-### backup
+## backup
 
 #### debian / ubuntu
 dpkg -l | grep ^ii | awk '{print $2}' > ~/git/DotFiles/debpacket

@@ -1,6 +1,6 @@
 [user]
-    name = Marco Pacchiotti
-    email = 57013700+pacchio1@users.noreply.github.com
+	name = Marco Pacchiotti
+	email = marco.pacchiotti@excentio.com
 
 [core]
     editor = codium
@@ -16,3 +16,5 @@
 
 [credential]
 	helper = store
+[init]
+	defaultBranch = main
