@@ -97,6 +97,8 @@ custom_theme() {
 	cd gnome-extension
 	sudo cp -r * /home/mark/.local/share/gnome-shell/extensions
 	cd /home/mark/.local/share/gnome-shell/extensions && sudo chown $USER:$USER *
+
+	cp ~/git/DotFiles/.config/.gtkrc-2.0 ~
 	#gnome-tweaks
 	gnome-tweaks
 }
