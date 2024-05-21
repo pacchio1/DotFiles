@@ -43,10 +43,13 @@ fi
 export GTK_THEME=Dracula
 export ICONS_THEME=Papirus
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if [ -f "$HOME/.pyenv" ]; then
+
+	export PYENV_ROOT="$HOME/.pyenv"
+	export PYENV_ROOT="$HOME/.pyenv"
+	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init -)"
+fi
 ########## tmux ##########
 
 # Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
