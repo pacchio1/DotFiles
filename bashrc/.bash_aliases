@@ -50,12 +50,12 @@ alias n='cd && nano .note'
 alias supergitpush='gadd && gc "super git push" && gpush'
 alias murocarta='cd ~/wallpaper/WallPaper'
 alias killtmux='tmux kill-ses -t'
-export portatile=192.168.1.22
 alias sshPortatile='ssh mark@$portatile'
 alias gnome-extensions-sync="cp -r /home/mark/.local/share/gnome-shell/extensions/* /home/mark/git/gnome-extension && cd /home/mark/git/gnome-extension && supergitpush"
+alias docker_onuse='export docker_inuso='
+alias docker_onuse_console='docker exec -it $docker_inuso /bin/bash'
+alias obsidian-sync='gitf && cd obsidian_pacchio && gpull && supergitpush'
 
 #tmp
 alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
-#export docker_inuso='citofonoweb'
-export docker_inuso='wordpress'
-alias execDocker='docker exec -it $docker_inuso /bin/bash'
+
