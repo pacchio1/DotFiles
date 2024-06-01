@@ -4,9 +4,10 @@ links() {
 
 	#bash
 	ln -sf ~/git/DotFiles/bashrc/daily.sh ~/.bashrc
-	thouch ~/.bash_aliases
+	thouch ~/.bash_aliases && thouch ~/.bash_profile
 	mkdir ~/.config/fish
 	ln -sf ~/git/DotFiles/bashrc/.bash_aliases ~/.bash_aliases
+	ln -sf ~/git/DotFiles/bashrc/.bash_profile ~/.bash_profile
 	ln -sf ~/git/DotFiles/.config/fish/config.fish ~/.config/fish/config.fish
 
 	#i3

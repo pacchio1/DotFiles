@@ -50,6 +50,7 @@ eval "$(pyenv init -)"
 
 #export PATH=$PATH:/usr/share/sdk-android-tool/platform-tools
 
+=======
 ########## tmux ##########
 
 # Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
