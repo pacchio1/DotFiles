@@ -56,6 +56,7 @@ alias gnome-extensions-sync="cp -r /home/mark/.local/share/gnome-shell/extension
 alias docker_onuse='export docker_inuso='
 alias docker_onuse_console='docker exec -it $docker_inuso /bin/bash'
 alias obsidian-sync='gitf && cd obsidian_pacchio && gpull && supergitpush'
+alias pathandexport='nvim ~/.bash_aliases'
 
 #tmp
 alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
