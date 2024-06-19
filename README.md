@@ -30,7 +30,7 @@ echo "Done"
 
 > ./autorun.sh
 
-### IN TMUX prefix + I per installare
+### IN TMUX prefix + I to install it
 
 ## tested on
 - Debian
