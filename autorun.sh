@@ -1,5 +1,6 @@
 ###### Install Package First ######
 links() {
+	source ~/.bashrc
 	cd
 
 	#bash
@@ -47,11 +48,13 @@ links() {
 
 }
 wallpa() {
+	source ~/.bashrc
 	mkdir ~/wallpaper
 	cd ~/wallpaper
 	git clone https://github.com/NotPacchio/WallPaper.git
 }
 nvimconf() {
+	source ~/.bashrc
 	# Uninstall
 	rm -rf ~/.config/nvim
 	rm -rf ~/.local/share/nvim
@@ -78,6 +81,7 @@ nvimconf() {
 
 }
 custom_theme() {
+	source ~/.bashrc
 
 	dotf
 	#dracula + papirus: icons and themes
@@ -153,28 +157,28 @@ customization() {
 	esac
 }
 
-echo "Hai già installato tutti i pacchetti? (specificati nel readme)"
+echo "Hai già installato tutti i pacchetti? (specificati nel readme)/have you installed all packages?"
 eccho "\n git neovim neofetch tmux kitty bat fzf exa fish locate"
 if ask_confirmation "Confermi?"; then
-	echo "Fatto!"
+	echo "Fatto! / Done!"
 else
-	echo "Non hai confermato."
+	echo "Non hai confermato. / Not Done !"
 fi
-echo "desideri configurare neovim?"
+echo "desideri configurare neovim? / do you want to configure neovim?"
 if ask_confirmation_nvim "Confermi?"; then
-	echo "Fatto!"
+	echo "Fatto! / Done!"
 else
-	echo "Non hai confermato."
+	echo "Non hai confermato. / Not Done !"
 fi
-echo "desideri anche gli sfondi"
+echo "desideri anche gli sfondi / wallpapers?"
 if ask_confirmation_wallpaper "Confermi?"; then
-	echo "Fatto!"
+	echo "Fatto! / Done!"
 else
-	echo "Non hai confermato."
+	echo "Non hai confermato. / Not Done !"
 fi
-echo "desideri anche icons e themes? (gnome)"
+echo "desideri anche icons e themes?/ do you want to personalize icons and themes?"
 if customization "Confermi?"; then
-	echo "Fatto!"
+	echo "Fatto! / Done!"
 else
-	echo "Non hai confermato."
+	echo "Non hai confermato. / Not Done !"
 fi
