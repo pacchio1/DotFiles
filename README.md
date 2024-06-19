@@ -42,3 +42,9 @@ echo "Done"
 - Raspbianos
 
 ## if thunar dont change to dark mode mod + d -> lxapparence -> change dim cahr
+
+## Results
+
+![Gnome Result](.other/resultGnome.png)
+
+![I3 Result](.other/resultI3.png)
