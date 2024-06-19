@@ -13,7 +13,7 @@ i3 i3status i3status nitrogen thunar flameshot blueman  pavucontrol lxappearance
 
 ## Command
 
-### INSTAL THE PACKAGES BEFORE RUNNING THE SCRIPT
+### INSTALL THE PACKAGES BEFORE RUNNING THE SCRIPT
 cd
 
 mkdir git
