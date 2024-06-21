@@ -9,6 +9,7 @@ fi
 
 . "$HOME/.cargo/env"
 
+#Export
 #doom emacs
 export PATH=$PATH:~/.config/emacs/bin
 #rust
@@ -32,6 +33,7 @@ if [ -f "$HOME/.pyenv" ]; then
 	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 	eval "$(pyenv init -)"
 fi
-#Export
+
 export SDKMAN_DIR="$HOME/.sdkman"
 export portatile=192.168.1.22
+export PATH="$PATH:/home/mark/.local/bin"
