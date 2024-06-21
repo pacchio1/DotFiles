@@ -91,5 +91,9 @@ if command -v ng &>/dev/null; then
 	source <(ng completion script)
 fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+#sdkman
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Created by `pipx` on 2024-06-21 16:35:00
+if [ -f "/home/mark/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/mark/.config/fabric/fabric-bootstrap.inc"; fi
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
