@@ -96,4 +96,4 @@ fi
 
 # Created by `pipx` on 2024-06-21 16:35:00
 if [ -f "/home/mark/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/mark/.config/fabric/fabric-bootstrap.inc"; fi
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
