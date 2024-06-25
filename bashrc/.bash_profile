@@ -9,6 +9,9 @@ fi
 
 . "$HOME/.cargo/env"
 
+#Eval
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 #Export
 #doom emacs
 export PATH=$PATH:~/.config/emacs/bin
