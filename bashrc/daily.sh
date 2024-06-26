@@ -74,22 +74,10 @@ fi
 # Dracula theme for Bash
 export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;108m\]\h\[$(tput sgr0)\]:\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;216m\]\w\[$(tput sgr0)\]\[\033[38;5;37m\]\$ \[$(tput sgr0)\]"
 
-#x=$((RANDOM % 8))
-#y=$((RANDOM % 7+1))
-#z=$((RANDOM % 8))
-
-#echo "Random numbers: $x, $y, $z"
-#neofetch --ascii_colors "$x" "$y" "$z" "$z" "$y" "$x"
-##### ----------- basta ------------------------
 #neofetch
 
 #store credential git
 git config --global credential.helper store
-
-#angular
-if command -v ng &>/dev/null; then
-	source <(ng completion script)
-fi
 
 #sdkman
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

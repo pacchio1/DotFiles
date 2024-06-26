@@ -182,3 +182,7 @@ if customization "Confermi?"; then
 else
 	echo "Non hai confermato. / Not Done !"
 fi
+echo "Pwd per settare obsidian sync every 10min del ora"
+sudo su -c "echo \"10 * * * * mark obsidian-sync\" >> /etc/crontab"
+
+
