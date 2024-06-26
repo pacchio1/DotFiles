@@ -42,6 +42,7 @@ alias v='vim'
 alias emacs="doom run"
 alias e='exit'
 #alias stabledifusion-start='cd  ~/stablediff/  && ./webui.sh --listen --api'
+
 #node
 alias npmi='npm install'
 alias npms='npm start'
