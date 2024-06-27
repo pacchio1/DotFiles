@@ -25,3 +25,5 @@ export PATH="$PATH:/home/mark/.local/bin"
 
 #=====Eval
 
+#=====AutoCreated
+if [ -f "/home/mark/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/mark/.config/fabric/fabric-bootstrap.inc"; fi
