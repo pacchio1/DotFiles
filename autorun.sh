@@ -45,6 +45,8 @@ links() {
 	cd ~/git/DotFiles/kitty-master
 	cp dracula.conf diff.conf ~/.config/kitty/
 	echo "include dracula.conf" >>~/.config/kitty/kitty.conf
+	echo "Pwd per settare obsidian sync every 10min del ora"
+	sudo su -c "echo \"10 * * * * mark obsidian-sync\" >> /etc/crontab"
 
 }
 wallpa() {
@@ -83,21 +85,23 @@ nvimconf() {
 custom_theme() {
 	source ~/.bashrc
 
-	dotf
 	#dracula + papirus: icons and themes
+	cd $HOME
+	mkdir .themes
+	mkdir .icons
 	tar -xvf dracula_theme.tar.gz
 	cp -r .icons/* ~/.icons
 	cp -r .themes/* ~/.themes
 
 	#command on https://www.gnome-look.org/p/1687249/
-	gsettings set org.gnome.desktop.interface gtk-theme Dracula
-	gsettings set org.gnome.desktop.wm.preferences theme Dracula
+	#gsettings set org.gnome.desktop.interface gtk-theme Dracula
+	#gsettings set org.gnome.desktop.wm.preferences theme Dracula
 
 	#setup per flatpak solo per gnome
 	#sudo flatpak override --filesystem=~/.
 
 	#extension
-	gitf
+	cd $HOME/git
 	git clone https://github.com/NotPacchio/gnome-extension.git
 	cd gnome-extension
 	sudo cp -r * /home/mark/.local/share/gnome-shell/extensions
@@ -182,7 +186,6 @@ if customization "Confermi?"; then
 else
 	echo "Non hai confermato. / Not Done !"
 fi
-echo "Pwd per settare obsidian sync every 10min del ora"
-sudo su -c "echo \"10 * * * * mark obsidian-sync\" >> /etc/crontab"
+
 
 
