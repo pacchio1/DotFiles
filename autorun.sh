@@ -40,7 +40,7 @@ links() {
 	ln -sf ~/git/DotFiles/.config/neofetch/config.conf ~/.config/neofetch/config.conf
 
 	#kitty
-	mkdir ~/.config/kitty
+	# mkdir ~/.config/kitty
 
 	cd ~/git/DotFiles/kitty-master
 	cp dracula.conf diff.conf ~/.config/kitty/
@@ -54,6 +54,7 @@ wallpa() {
 	mkdir ~/wallpaper
 	cd ~/wallpaper
 	git clone https://github.com/NotPacchio/WallPaper.git
+	git clone https://github.com/AngelJumbo/gruvbox-wallpapers.git
 }
 nvimconf() {
 	source ~/.bashrc

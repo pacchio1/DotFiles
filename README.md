@@ -2,7 +2,7 @@
 DotFiles, my config files
 
 ## Pacchetti
-git neovim neofetch tmux kitty bat fzf exa fish locate
+git neovim neofetch tmux bat fzf exa fish locate
 
 ### I3 customization
 i3 i3status i3status nitrogen thunar flameshot blueman  pavucontrol lxappearance
@@ -14,21 +14,7 @@ i3 i3status i3status nitrogen thunar flameshot blueman  pavucontrol lxappearance
 ## Command
 
 ### INSTALL THE PACKAGES BEFORE RUNNING THE SCRIPT
-cd
-
-mkdir git
-
-cd git
-
-git clone <https://github.com/pacchio1/DotFiles.git>
-
-cd DotFiles
-
-chmod +x autorun.sh
-
-echo "Done"
-
-> ./autorun.sh
+cd ; mkdir git; cd git; git clone <https://github.com/pacchio1/DotFiles.git> && cd DotFiles; chmod +x autorun.sh && echo "Done" && ./autorun.sh
 
 ### IN TMUX prefix + I to install it
 
@@ -45,6 +31,10 @@ echo "Done"
 
 ## Results
 
-![Gnome Result](.other/resultGnome.png)
+![Gnome Result](other/resultGnome.png)
 
-![I3 Result](.other/resultI3.png)
+![I3 Result](other/resultI3.png)
+
+## I moved to gruvbox theme
+
+![Gnome Result 2.0](other/gnome2.0.png)
