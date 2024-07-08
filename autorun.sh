@@ -47,6 +47,7 @@ links() {
 	echo "include dracula.conf" >>~/.config/kitty/kitty.conf
 	echo "Pwd per settare obsidian sync every 10min del ora"
 	sudo su -c "echo \"10 * * * * mark obsidian-sync\" >> /etc/crontab"
+	sudo su -c "echo \"* * 10 * * mark auto_backup_dnf\" >> /etc/crontab"
 
 }
 wallpa() {
