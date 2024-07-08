@@ -64,5 +64,7 @@ alias vide='tmuxifier load-session vide'
 alias transcrizione='yt --transcript'
 alias riassunto='fabric -sp summary'
 alias video_content='cd ~/git/DotFiles/scripts && ./video_analisi.sh'
+alias backup_dnf_pacchetti='dotf; cd customization; rpm -qa --qf "%{NAME}\n" | grep -vE "^(kernel|glibc|bash|core|systemd|grub2|initramfs|dnf)" > pacchetti.fedora'
+alias auto_backup_dnf='backup_dnf_pacchetti;cd ..; git checkout backup; gadd && gc "super backup" && gpush'
 #tmp
 alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
