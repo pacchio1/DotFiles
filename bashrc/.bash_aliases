@@ -62,6 +62,7 @@ alias pbpaste='xclip'
 alias lspatterns='gitf && cd fabric/patterns && ls'
 alias vide='tmuxifier load-session vide'
 alias transcrizione='yt --transcript'
-alias riassunto='fabric -sp create_summary'
+alias riassunto='fabric -sp summary'
+alias video_content='cd ~/git/DotFiles/scripts && ./video_analisi.sh'
 #tmp
 alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
