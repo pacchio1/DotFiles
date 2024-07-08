@@ -75,7 +75,7 @@ nvimconf() {
 	git clone https://github.com/LazyVim/starter ~/.config/nvim
 
 	rm -rf ~/.config/nvim/.git
-
+	cp -r $HOME/git/DotFiles/.config/nvim $HOME/.config
 	nvim
 	# se devo muovere la cartella config di nvim farlo dopo questo commento
 	#ln -sf ~/git/DotFiles/.config/nvim ~/.config/nvim

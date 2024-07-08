@@ -60,5 +60,8 @@ alias pathandexport='nvim ~/.bash_aliases'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip'
 alias lspatterns='gitf && cd fabric/patterns && ls'
+alias vide='tmuxifier load-session vide'
+alias transcrizione='yt --transcript'
+alias riassunto='fabric -sp create_summary'
 #tmp
 alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
