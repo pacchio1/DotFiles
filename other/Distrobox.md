@@ -26,7 +26,10 @@ mkdir arch
 cd arch
 git clone https://aur.archlinux.org/yay.git
 cd yay
-sudo pacman -U yay-12*.pkg.tar.zst
+makepkg -si
+
+## Nala
+sudo apt install nala
 
 
 

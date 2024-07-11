@@ -98,3 +98,13 @@ flatpak list --columns=name
 
 #### snap
 snap list | grep -v '^$' | awk {'print $1'}
+
+
+
+## MORE !!!! MORE !!!!
+
+NIX: [sh <(curl -L https://nixos.org/nix/install) --daemon](https://nixos.org/)
+
+BREW: [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"](https://brew.sh/)
+
+ALL distros: [distrobox](other/distrobox.md)
