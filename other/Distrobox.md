@@ -28,8 +28,13 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
-## Nala
+## 7 Nala
 sudo apt install nala
 
-
+## 8 Nix
+distrobox create -i nixos/nix --name nix #nixos
+cd
+cd .distrobox
+mkdir nix
+cd nix
 
