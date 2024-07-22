@@ -32,10 +32,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-########  path variabili ##
-
-# .bash_profile
-
 ########## tmux ##########
 
 # Verifica se la variabile di controllo è impostata e se non siamo già dentro una sessione tmux
@@ -82,7 +78,4 @@ git config --global credential.helper store
 #sdkman
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# Created by `pipx` on 2024-06-21 16:35:00
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-if [ -f "/home/mark/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/mark/.config/fabric/fabric-bootstrap.inc"; fi
