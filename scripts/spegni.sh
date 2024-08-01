@@ -1,4 +1,4 @@
-ask_confirmation_nvim() {
+ask_confirmation() {
 	read -p "$1 (y/N): " response
 	case "$response" in
 	[yY])
