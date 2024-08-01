@@ -13,3 +13,5 @@ ask_confirmation_nvim() {
 if ask_confirmation "Confermi di spegnere il computer?"; then
 	echo "Fatto! / Done!"
 else
+    echo "Non hai confermato. / Not Done !"
+fi
