@@ -1,7 +1,4 @@
-# se si rompe qualcosa metterlo in bashrc
-
 #vpn
-alias vpn-excentio="cd ~ && sudo openvpn marcopacchiotti.ovpn"
 
 #commands
 alias ls='exa -a'

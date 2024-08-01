@@ -108,7 +108,7 @@ custom_theme() {
 	cd $HOME/git
 	git clone https://github.com/NotPacchio/gnome-extension.git
 	cd gnome-extension
-	sudo cp -r * /home/mark/.local/share/gnome-shell/extensions
+	sudo cp .* /home/mark/.local/share/gnome-shell/extensions
 	cd /home/mark/.local/share/gnome-shell/extensions && sudo chown $USER:$USER *
 
 	cp ~/git/DotFiles/.config/.gtkrc-2.0 ~
@@ -190,6 +190,6 @@ if customization "Confermi?"; then
 else
 	echo "Non hai confermato. / Not Done !"
 fi
-
+echo "è consigliato un logut"
 
 

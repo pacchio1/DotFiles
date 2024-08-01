@@ -19,12 +19,12 @@ export GTK_THEME=Gruvbox-Dark-Medium-B-MB
 #doom emacs
 export PATH=$PATH:~/.config/emacs/bin
 
-export portatile=192.168.1.22
 export PATH="$PATH:/home/mark/.local/bin"
 
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 #=====Eval
 eval "$(tmuxifier init -)"
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 #=====AutoCreated
 if [ -f "/home/mark/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/mark/.config/fabric/fabric-bootstrap.inc"; fi
