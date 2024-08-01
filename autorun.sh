@@ -83,7 +83,7 @@ nvimconf() {
 	# se devo muovere la cartella config di nvim farlo dopo questo commento
 	#ln -sf ~/git/DotFiles/.config/nvim ~/.config/nvim
 	#se avro personalizazioni
-	cp -r $HOME/git/DotFiles/.config/neovim/nvim/ $HOME/.config/nvim/lua/plugin/
+	cp -r $HOME/git/DotFiles/.config/neovim/nvim/ $HOME/.config/nvim/lua/plugins/
 
 }
 custom_theme() {
