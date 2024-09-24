@@ -57,7 +57,7 @@ alias obsidian-sync='gitf && cd obsidian_pacchio && gpull && supergitpush'
 alias pathandexport='nvim ~/.bash_aliases'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip'
-#alias lspatterns='gitf && cd fabric/patterns && ls' fabbric -p
+#alias lspatterns='gitf && cd fabric/patterns && ls' fabbric -l
 alias vide='tmuxifier load-session vide'
 alias transcrizione='yt --transcript'
 alias riassunto='fabric -sp summary'
@@ -67,3 +67,5 @@ alias auto_backup_dnf='backup_dnf_pacchetti;cd ..; git checkout backup; gadd && 
 alias spe='cd ~/git/DotFiles/scripts && ./spegni.sh'
 #tmp
 alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
+alias uncensored-ia='ollama run llama2-uncensored:latest'
+alias i2pstart='/home/mark/i2p/i2prouter start'
