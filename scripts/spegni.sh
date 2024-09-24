@@ -1,7 +1,7 @@
 ask_confirmation() {
 	read -p "$1 (y/N): " response
 	case "$response" in
-	[yY])
+	[yYsS])
 		shutdown -h now
 		return 0 # Conferma
 		;;
