@@ -39,6 +39,7 @@ alias v='vim'
 alias emacs="doom run"
 alias e='exit'
 #alias stabledifusion-start='cd  ~/stablediff/  && ./webui.sh --listen --api'
+alias cash_ita='LANGUAGE=it_IT LANG=it_IT gnucash'
 
 #node
 alias npmi='npm install'
