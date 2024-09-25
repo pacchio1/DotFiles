@@ -39,7 +39,7 @@ alias v='vim'
 alias emacs="doom run"
 alias e='exit'
 #alias stabledifusion-start='cd  ~/stablediff/  && ./webui.sh --listen --api'
-
+alias jacket-torrent-start='cd /home/mark/.local/share/applications/Jackett && ./jackett'
 #node
 alias npmi='npm install'
 alias npms='npm start'
