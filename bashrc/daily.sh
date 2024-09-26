@@ -82,4 +82,5 @@ git config --global credential.helper store
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+source <(ng completion script 2> /dev/null)
+
