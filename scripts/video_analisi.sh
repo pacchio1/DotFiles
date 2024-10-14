@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo systemctl start ollama
 echo "url video? "
 read URL_VIDEO
 cd $HOME/.config/fabric
