@@ -66,7 +66,7 @@ alias video_content='cd ~/git/DotFiles/scripts && ./video_analisi.sh'
 alias backup_dnf_pacchetti='dotf; cd customization; rpm -qa --qf "%{NAME}\n" | grep -vE "^(kernel|glibc|bash|core|systemd|grub2|initramfs|dnf)" > pacchetti.fedora'
 alias auto_backup_dnf='backup_dnf_pacchetti;cd ..; git checkout backup; gadd && gc "super backup" && gpush && gcheck main'
 alias spe='cd ~/git/DotFiles/scripts && ./spegni.sh'
-alias music-sync='cd home/mark/Music/Music/prefe/ && spotdl https://open.spotify.com/playlist/7lzz5VZMbp6d0rSXZURYh6'
+alias music-sync='cd /home/mark/Music/Music/prefe/ && spotdl https://open.spotify.com/playlist/7lzz5VZMbp6d0rSXZURYh6'
 #tmp
 alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
 alias uncensored-ia='ollama run llama2-uncensored:latest'
