@@ -41,6 +41,8 @@ alias e='exit'
 #alias stabledifusion-start='cd  ~/stablediff/  && ./webui.sh --listen --api'
 alias jacket-torrent-start='cd /home/mark/.local/share/applications/Jackett && ./jackett'
 alias cash_ita='LANGUAGE=it_IT LANG=it_IT gnucash'
+alias present='cd ~/Documents/present/'
+alias file='nautilus'
 
 #node
 alias npmi='npm install'
