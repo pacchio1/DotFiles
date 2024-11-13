@@ -5,6 +5,7 @@ $ark = array("zip", "tar", "rar", "7z", "gz");
 $docs = array("pdf", "txt", "doc", "docx", "pptx", "ppt", "odt", "odp");
 $video = array("mp4", "mkv", "webm", "avi", "mov", "flv");
 $music = array("mp3", "wav", "ogg");
+$app = array("rpm","AppImage");
 
 $directory = readline("Directory: ");
 echo ($directory);
@@ -29,6 +30,8 @@ foreach ($files as $file) {
             $destination = "/home/mark/Videos/" . $file;
         } elseif (in_array($extension, $music)) {
             $destination = "/home/mark/Music/" . $file;
+        } elseif (in_array($extension, $app)) {
+            $destination = "/home/mark/appimage-rpm-build" . $file;
         }
 
         // Se la destinazione è impostata, sposta il file

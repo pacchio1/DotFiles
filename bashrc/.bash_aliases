@@ -44,6 +44,8 @@ alias jacket-torrent-start='cd /home/mark/.local/share/applications/Jackett && .
 alias cash_ita='LANGUAGE=it_IT LANG=it_IT gnucash'
 alias present='cd ~/Documents/present/'
 alias file='nautilus'
+alias riordina='/home/mark/git/DotFiles/scripts/riordina.sh'
+alias down='cd /home/mark/Downloads'
 
 #node
 alias npmi='npm install'
