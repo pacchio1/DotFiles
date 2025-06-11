@@ -78,9 +78,5 @@ git config --global credential.helper store
 #sdkman
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-
-
-
 # Load Angular CLI autocompletion.
-source <(ng completion script 2> /dev/null)
-
+source <(ng completion script 2>/dev/null)
