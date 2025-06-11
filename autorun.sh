@@ -49,6 +49,9 @@ links() {
 	sudo su -c "echo \"10 * * * * mark obsidian-sync\" >> /etc/crontab"
 	sudo su -c "echo \"* * 10 * * mark auto_backup_dnf\" >> /etc/crontab"
 
+	#Ghosty
+	mkdir ~/.config/ghosty
+	ln -sf ~/git/DotFiles/.config/ghostty/config ~/.config/ghostty/config
 }
 wallpa() {
 	source ~/.bashrc
