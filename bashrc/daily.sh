@@ -68,10 +68,13 @@ fi
 ########## programmi ##########
 
 # Dracula theme for Bash
-export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;108m\]\h\[$(tput sgr0)\]:\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;216m\]\w\[$(tput sgr0)\]\[\033[38;5;37m\]\$ \[$(tput sgr0)\]"
-
+#export PS1="\[\033[38;5;204m\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;108m\]\h\[$(tput sgr0)\]:\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;216m\]\w\[$(tput sgr0)\]\[\033[38;5;37m\]\$ \[$(tput sgr0)\]"
+# Funzione per il prompt di Git
 #neofetch
+#PS1='\[\e[38;5;124;1m\]\u\[\e[0m\] \[\e[38;5;65;1;2m\]\[\e[0m\] \[\e[38;5;215m\]\W\[\e[38;5;81;2m\]${PS1_CMD1}\[\e[0m\]'
 
+PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'
+PS1='\[\e[38;5;124;1m\]\u\[\e[0m\] \[\e[38;5;64;1m\]\[\e[0m\] \[\e[38;5;215m\]\w\[\e[0m\] \[\e[38;5;75;2m\]${PS1_CMD1}\[\e[0m\] \[\e[38;5;70;2;3m\]\[\e[0m\] '
 #store credential git
 git config --global credential.helper store
 
@@ -80,3 +83,6 @@ git config --global credential.helper store
 
 # Load Angular CLI autocompletion.
 source <(ng completion script 2>/dev/null)
+
+# opencode
+export PATH=/home/mark/.opencode/bin:$PATH

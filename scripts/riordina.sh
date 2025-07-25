@@ -9,7 +9,7 @@ for file in "${files[@]}"; do
 
     case "$extension" in
     png | jpg | webp | svg) destination="/home/mark/Pictures/$file" ;;
-    zip | tar | rar | 7z | gz) destination="/home/mark/Downloads/Ark/$file" ;;
+    zip | tar | rar | 7z | gz | tar | tar.xz | tgz | xz) destination="/home/mark/Downloads/Ark/$file" ;;
     pdf | txt | doc | docx | pptx | ppt | odt | odp) destination="/home/mark/Documents/$file" ;;
     mp4 | mkv | webm | avi | mov | flv) destination="/home/mark/Videos/$file" ;;
     mp3 | wav | ogg) destination="/home/mark/Music/$file" ;;
