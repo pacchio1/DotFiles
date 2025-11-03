@@ -26,8 +26,7 @@ defaultyes=True
 
 keepcache=True</p>
 
-#### Rpm fusion -> https://rpmfusion.org/Configuration
-
+#### Rpm fusion -> <https://rpmfusion.org/Configuration>
 
 ```bash
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -45,17 +44,17 @@ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=Pack
 
 ## nala - debian
 
-echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list; wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
+echo "deb <http://deb.volian.org/volian/> scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list; wget -qO - <https://deb.volian.org/volian/scar.key> | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
 
 sudo apt update && sudo apt install nala
 
 -------------------------
 
 ## flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+flatpak remote-add --if-not-exists flathub <https://dl.flathub.org/repo/flathub.flatpakrepo>
 
 ## Repo
-
 
 ### NvChad
 
@@ -64,7 +63,6 @@ git clone <https://github.com/NvChad/NvChad> ~/.config/nvim --depth 1 && nvim
 ### HoMyZsh
 
 sh -c "\$(curl -fsSL <https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh>)"
-
 
 ### Lazy vim
 
@@ -86,25 +84,42 @@ tmux source ~/.tmux.conf
 
 ### Flatpak
 
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists flathub <https://dl.flathub.org/repo/flathub.flatpakrepo>
 
 ## backup
 
 #### debian / ubuntu
+
 dpkg -l | grep ^ii | awk '{print $2}' > ~/git/DotFiles/debpacket
 
 #### flatpak
+
 flatpak list --columns=name
 
 #### snap
+
 snap list | grep -v '^$' | awk {'print $1'}
 
-
-
-## MORE !!!! MORE !!!!
+## MORE !!!! MORE
 
 NIX: [sh <(curl -L https://nixos.org/nix/install) --daemon](https://nixos.org/)
 
 BREW: [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"](https://brew.sh/)
 
 ALL distros: [distrobox](other/distrobox.md)
+
+## Enable open in terminal on gnome (nautilus)
+
+The "Open in Terminal" feature is provided by the package nautilus-extension-gnome-terminal (or similar, depending on your distro).
+
+On Ubuntu/Debian:
+sudo apt install nautilus-extension-gnome-terminal
+nautilus -q
+
+On Fedora:
+sudo dnf install nautilus-open-terminal
+nautilus -q
+
+On Arch / Manjaro:
+sudo pacman -S nautilus-open-terminal
+nautilus -q

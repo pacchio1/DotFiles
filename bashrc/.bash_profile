@@ -12,11 +12,13 @@ fi
 
 # export GTK_THEME=Dracula
 export ICONS_THEME=Papirus
+export GTK_THEME=Adwaita-dark
 
 #export GTK_THEME=Gruvbox-Dark-Medium-B-MB
 #export GTK_THEME=Orchis-Dark
 #export GTK_THEME=Gruvbox-Dark
-export GTK_THEME=WhiteSur-Dark
+#export GTK_THEME=WhiteSur-Dark
+
 #export PATH=$PATH:/usr/share/sdk-android-tool/platform-tools
 
 #doom emacs
