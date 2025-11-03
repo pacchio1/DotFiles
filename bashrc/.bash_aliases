@@ -87,3 +87,4 @@ alias i2pstart='/home/mark/i2p/i2prouter start'
 
 alias tomcat-restart='sudo systemctl stop tomcat && sudo rm -f /opt/apache-tomcat-9.0.98/logs/* && sudo systemctl start tomcat'
 alias ghostty-keybindings='ghostty +list-keybinds --default'
+alias kvm_togle='dotf && cd scripts && sudo ./toggle_kvm.sh'
