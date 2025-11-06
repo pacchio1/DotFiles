@@ -11,8 +11,8 @@ fi
 #=====Export
 
 # export GTK_THEME=Dracula
-export ICONS_THEME=Papirus
-export GTK_THEME=Adwaita-dark
+#export ICONS_THEME=Papirus
+#export GTK_THEME=Adwaita-dark
 
 #export GTK_THEME=Gruvbox-Dark-Medium-B-MB
 #export GTK_THEME=Orchis-Dark
