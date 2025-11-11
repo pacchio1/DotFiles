@@ -5,13 +5,12 @@ links() {
 
 	#bash
 	ln -sf ~/git/DotFiles/bashrc/daily.sh ~/.bashrc
-	thouch ~/.bash_aliases && thouch ~/.bash_profile
+	thouch ~/.bash_aliases
 	mkdir ~/.config/fish
 	ln -sf ~/git/DotFiles/bashrc/.bash_aliases ~/.bash_aliases
-	ln -sf ~/git/DotFiles/bashrc/.bash_profile ~/.bash_profile
 	ln -sf ~/git/DotFiles/.config/fish/config.fish ~/.config/fish/config.fish
 
-	#i3
+	# i3
 	mkdir ~/.config/i3
 	mkdir ~/.config/i3status
 	ln -sf ~/git/DotFiles/.config/i3/config ~/.config/i3/config
@@ -68,11 +67,10 @@ nvimconf() {
 	#nvim
 	# required
 	mv ~/.config/nvim{,.bak}
+	# ignore mv errors
+	mv ~/.config/nvim{,.bak} 2>/dev/null || true
+	mv ~/.local/share/nvim{,.bak} 2>/dev/null || true
 
-	# optional but recommended
-	mv ~/.local/share/nvim{,.bak}
-	mv ~/.local/state/nvim{,.bak}
-	mv ~/.cache/nvim{,.bak}
 	#nvchad
 	#git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
@@ -89,35 +87,10 @@ nvimconf() {
 	cp -r $HOME/git/DotFiles/.config/neovim/nvim/ $HOME/.config/nvim/lua/plugins/
 
 }
-custom_theme() {
-	source ~/.bashrc
+# custom_theme() {
+# 	source ~/.bashrc
 
-	#dracula + papirus: icons and themes
-	cd $HOME
-	mkdir .themes
-	mkdir .icons
-	tar -xvf dracula_theme.tar.gz
-	cp -r .icons/* ~/.icons
-	cp -r .themes/* ~/.themes
-
-	#command on https://www.gnome-look.org/p/1687249/
-	#gsettings set org.gnome.desktop.interface gtk-theme Dracula
-	#gsettings set org.gnome.desktop.wm.preferences theme Dracula
-
-	#setup per flatpak solo per gnome
-	#sudo flatpak override --filesystem=~/.
-
-	#extension
-	cd $HOME/git
-	git clone https://github.com/NotPacchio/gnome-extension.git
-	cd gnome-extension
-	sudo cp .* /home/mark/.local/share/gnome-shell/extensions
-	cd /home/mark/.local/share/gnome-shell/extensions && sudo chown $USER:$USER *
-
-	cp ~/git/DotFiles/.config/.gtkrc-2.0 ~
-	#gnome-tweaks
-	gnome-tweaks
-}
+# }
 ask_confirmation() {
 	read -p "$1 (y/N): " response
 	case "$response" in
@@ -155,18 +128,18 @@ ask_confirmation_wallpaper() {
 	esac
 }
 
-customization() {
-	read -p "$1 (y/N): " response
-	case "$response" in
-	[yY])
-		custom_theme
-		return 0 # Conferma
-		;;
-	*)
-		return 1 # Non conferma
-		;;
-	esac
-}
+# customization() {
+# 	read -p "$1 (y/N): " response
+# 	case "$response" in
+# 	[yY])
+# 		custom_theme
+# 		return 0 # Conferma
+# 		;;
+# 	*)
+# 		return 1 # Non conferma
+# 		;;
+# 	esac
+# }
 
 echo "Hai già installato tutti i pacchetti? (specificati nel readme)/have you installed all packages?"
 eccho "\n git neovim neofetch tmux kitty bat fzf exa fish locate"
@@ -188,11 +161,11 @@ else
 	echo "Non hai confermato. / Not Done !"
 fi
 echo "desideri anche icons e themes?/ do you want to personalize icons and themes?"
-if customization "Confermi?"; then
-	echo "Fatto! / Done!"
-else
-	echo "Non hai confermato. / Not Done !"
-fi
-echo "è consigliato un logut"
+# if customization "Confermi?"; then
+# 	echo "Fatto! / Done!"
+# else
+# 	echo "Non hai confermato. / Not Done !"
+# fi
+# echo "è consigliato un logut"
 
 
