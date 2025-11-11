@@ -1,1 +1,1 @@
-# Passages
+#Flatpack application
