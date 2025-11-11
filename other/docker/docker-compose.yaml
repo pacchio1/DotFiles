@@ -1,0 +1,27 @@
+version: "3"
+services:
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/config.json
+    command: --interval 604800
+    restart: unless-stopped
+
+  swingmusic:
+    image: ghcr.io/swingmx/swingmusic:latest
+    ports:
+      - "1970:1970"
+    volumes:
+      - /media/mark/hdd/Music:/music
+      - /media/mark/hdd/Music/swingmusic/config:/config
+    restart: unless-stopped
+
+  portainer:
+    image: portainer/portainer:latest
+    ports:
+      - "9443:9443"
+    environment:
+      PORTAINER_ADMIN_PASSWORD: wRnT^DYV+Q?iN3?
+      PORTAINER_ADMIN_USERNAME: admin
+    restart: unless-stopped
