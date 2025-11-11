@@ -1,5 +1,0 @@
-docker run --name swingmusic -p 1970:1970 \
-  -v /media/mark/hdd/Music:/music \
-  -v /media/mark/hdd/Music/swingmusic/config:/config \
-  --restart unless-stopped \
-  ghcr.io/swingmx/swingmusic:latest
