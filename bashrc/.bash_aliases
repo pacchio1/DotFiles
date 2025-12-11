@@ -22,8 +22,6 @@ alias spe='cd ~/git/DotFiles/scripts && ./spegni.sh'
 alias l='clear'
 alias e='exit'
 
-
-
 #utility
 #alias code='codium'
 alias todo='vim ~/TODO.md'
@@ -46,7 +44,7 @@ alias killtmux='tmux kill-ses -t'
 # alias gnome-extensions-sync="cp -r /home/mark/.local/share/gnome-shell/extensions/* /home/mark/git/gnome-extension && cd /home/mark/git/gnome-extension && supergitpush"
 # alias docker_onuse='export docker_inuso='
 # alias docker_onuse_console='docker exec -it $docker_inuso /bin/bash'
-alias obsidian-sync='gitf && cd obsidian_pacchio && gpull && supergitpush'
+alias obsidian-sync='cd Documents && cd obsidian_pacchio && git add . && git commit -m "ultime note" && git push'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip'
 #alias lspatterns='gitf && cd fabric/patterns && ls' fabbric -l
@@ -60,12 +58,11 @@ alias music-sync='cd /home/mark/Music/Music/prefe/ && spotdl https://open.spotif
 alias fileAdmin='nautilus admin:/'
 alias ghostty-keybindings='ghostty +list-keybinds --default'
 alias kvm_togle='dotf && cd scripts && sudo ./toggle_kvm.sh'
-
+alias java8='sdk default java 8.0.472-zulu'
+alias java23='sdk default java 23.0.2-zulu'
+alias java21='sdk default java 21.0.9-zulu'
 
 #tmp
 # alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
 # alias uncensored-ia='ollama run llama2-uncensored:latest'
 # alias i2pstart='/home/mark/i2p/i2prouter start'
-
-
-
