@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-# Script per installare tutti i Flatpak elencati
-# Funziona su Fedora 43 o versioni simili
+# Script per installare solo le app Flatpak utili (senza runtime superflui)
 
-# Assicurati che il remote Flathub sia aggiunto
 echo "🔍 Controllo Flathub..."
 if ! flatpak remotes | grep -q flathub; then
     echo "➕ Aggiungo Flathub..."
@@ -21,17 +19,6 @@ apps=(
     eu.betterbird.Betterbird
     io.github.getnf.embellish
     net.nokyan.Resources
-    org.freedesktop.Platform//24.08
-    org.freedesktop.Platform//25.08
-    org.freedesktop.Platform.GL.default//24.08
-    org.freedesktop.Platform.GL.default//24.08extra
-    org.freedesktop.Platform.GL.default//25.08
-    org.freedesktop.Platform.GL.default//25.08-extra
-    org.freedesktop.Platform.codecs-extra//25.08-extra
-    org.freedesktop.Platform.ffmpeg-full//24.08
-    org.freedesktop.Platform.openh264//2.5.1
-    org.gnome.Platform//48
-    org.gnome.Platform//49
     org.onlyoffice.desktopeditors
     org.telegram.desktop
 )
@@ -41,4 +28,4 @@ for app in "${apps[@]}"; do
     flatpak install -y flathub "$app"
 done
 
-echo "✅ Tutti i Flatpak sono stati installati!"
+echo "✅ Tutte le applicazioni sono state installate!"
