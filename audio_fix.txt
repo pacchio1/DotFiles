@@ -1,0 +1,112 @@
+nano ~/.config/wireplumber/bluetooth.lua.d/51-limit-codecs.lua
+
+monitor.bluez.properties = {
+  ["bluez5.codecs"] = "[ sbc ]",
+  ["bluez5.enable-sbc-xq"] = true,
+  ["bluez5.roles"] = "[ a2dp_sink ]",
+  ["bluez5.autoswitch-profile"] = false,
+  ["priority.driver"] = 65,
+  ["node.pause-on-idle"] = false
+}
+
+---
+
+sudo nano /etc/modprobe.d/rtw89.conf
+
+->
+options rtw89_core disable_ps_mode=y
+
+------------
+sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+
+valore a 2 lo era già
+
+Modifica ~/.config/wireplumber/bluetooth.lua.d/51-limit-codecs.lua 
+
+monitor.bluez.properties = {
+  ["bluez5.codecs"] = "[ sbc ]",
+  ["bluez5.enable-sbc-xq"] = true,
+  ["node.latency"] = "1024/48000",
+  ["api.alsa.period-size"] = 1024,
+  ["priority.driver"] = 100,
+  ["node.pause-on-idle"] = false
+}
+
+Nota: Se dopo il riavvio senti ancora lag, prova a cambiare 1024 con 2048 per aumentare ulteriormente il "cuscinetto".
+
+
+----------------
+
+x log wpctl inspect @DEFAULT_AUDIO_SINK@
+
+
+------------------
+Su Fedora/Bluefin, il percorso potrebbe essere leggermente diverso o il file deve avere un'intestazione specifica.
+
+Prova questa correzione immediata:
+
+    Sposta il file in una cartella che Wireplumber controlla sicuramente:
+    Bash
+
+    mkdir -p ~/.config/wireplumber/wireplumber.conf.d/
+    mv ~/.config/wireplumber/bluetooth.lua.d/51-limit-codecs.lua ~/.config/wireplumber/wireplumber.conf.d/51-limit-codecs.conf
+    ------------------------------------------------------------------------------
+    
+    
+    1. Pulisci i vecchi tentativi
+
+Rimuoviamo la cartella obsoleta per evitare confusione:
+Bash
+
+rm -rf ~/.config/wireplumber/bluetooth.lua.d/
+
+2. Crea il nuovo file in formato JSON
+
+Crea questa cartella (se non esiste) e il file con estensione .conf:
+Bash
+
+mkdir -p ~/.config/wireplumber/wireplumber.conf.d/
+nano ~/.config/wireplumber/wireplumber.conf.d/51-bluetooth-fix.conf
+
+Incolla questo blocco esatto (il formato JSON richiede le virgolette e una struttura specifica):
+JSON
+
+monitor.bluez.rules = [
+  {
+    matches = [
+      {
+        node.name = "~bluez_output.*"
+      }
+    ]
+    actions = {
+      update-props = {
+        bluez5.enable-sbc-xq = true
+        bluez5.codecs = [ sbc ]
+        node.latency = "1024/48000"
+        node.pause-on-idle = false
+        priority.driver = 100
+        priority.session = 100
+      }
+    }
+  }
+]
+
+3. Riavvia e Aspetta
+
+Dopo il comando, aspetta 5 secondi prima di controllare, altrimenti avrai di nuovo l'errore dell'ID:
+Bash
+
+systemctl --user restart wireplumber && sleep 5 && wpctl inspect @DEFAULT_AUDIO_SINK@ | grep -E "node.name|latency"
+
+
+
+
+
+
+
+Se vuoi aumentare ancora la stabilità:
+
+Se senti ancora qualche rarissimo scatto, apri il file .conf di prima e cambia 1024 con 2048:
+JSON
+
+node.latency = "2048/48000"
