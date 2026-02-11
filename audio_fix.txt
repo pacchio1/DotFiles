@@ -110,3 +110,5 @@ Se senti ancora qualche rarissimo scatto, apri il file .conf di prima e cambia 1
 JSON
 
 node.latency = "2048/48000"
+        bluez5.enable-msbc = false
+        bluez5.hw-volume = [ "08:25:73:3A:2D:68" ]
