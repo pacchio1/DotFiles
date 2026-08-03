@@ -64,8 +64,7 @@ by default.
 ## Gestione dei privilegi
 
 Preferisci `pkexec` o i flussi basati su PolicyKit per le azioni che richiedono
-privilegi amministrativi, rispettando il design atomico. Evita `sudo` dove un
-flusso PolicyKit è disponibile.
+privilegi amministrativi, rispettando il design atomico. Evita `sudo`. 
 
 ## Configurazione utente
 
