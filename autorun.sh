@@ -51,6 +51,12 @@ links() {
 	#Ghosty
 	mkdir ~/.config/ghosty
 	ln -sf ~/git/DotFiles/.config/ghostty/config ~/.config/ghostty/config
+
+	#opencode (i file tracciati; node_modules/package*.json restano locali)
+	mkdir -p ~/.config/opencode
+	ln -sf ~/git/DotFiles/.config/opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
+	ln -sf ~/git/DotFiles/.config/opencode/.gitignore ~/.config/opencode/.gitignore
+	ln -sf ~/git/DotFiles/.config/opencode/skills ~/.config/opencode/skills
 }
 wallpa() {
 	source ~/.bashrc
@@ -91,11 +97,28 @@ nvimconf() {
 # 	source ~/.bashrc
 
 # }
+daily() {
+	source ~/.bashrc
+	# mantieni una copia del .bashrc installato come daily (il tuo profilo quotidiano)
+	ln -sf ~/git/DotFiles/bashrc/daily.sh ~/.bashrc
+}
 ask_confirmation() {
 	read -p "$1 (y/N): " response
 	case "$response" in
-	[yY])
+	[y])
 		links
+		return 0 # Conferma
+		;;
+	*)
+		return 1 # Non conferma
+		;;
+	esac
+}
+ask_confirmation_daily() {
+	read -p "$1 (y/N): " response
+	case "$response" in
+	[y])
+		daily
 		return 0 # Conferma
 		;;
 	*)
@@ -166,6 +189,12 @@ echo "desideri anche icons e themes?/ do you want to personalize icons and theme
 # else
 # 	echo "Non hai confermato. / Not Done !"
 # fi
-# echo "è consigliato un logut"
+echo "vuoi configurare anche il daily? / do you want to configure the daily (bashrc)?"
+if ask_confirmation_daily "Confermi?"; then
+	echo "Fatto! / Done!"
+else
+	echo "Non hai confermato. / Not Done !"
+fi
+echo "è consigliato un logut"
 
 
