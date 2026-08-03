@@ -73,8 +73,8 @@ fi
 #neofetch
 #PS1='\[\e[38;5;124;1m\]\u\[\e[0m\] \[\e[38;5;65;1;2m\]\[\e[0m\] \[\e[38;5;215m\]\W\[\e[38;5;81;2m\]${PS1_CMD1}\[\e[0m\]'
 
-PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'
-PS1='\[\e[38;5;124;1m\]\u\[\e[0m\] \[\e[38;5;64;1m\]\[\e[0m\] \[\e[38;5;215m\]\w\[\e[0m\] \[\e[38;5;75;2m\]${PS1_CMD1}\[\e[0m\] \[\e[38;5;70;2;3m\]\[\e[0m\] '
+#PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'
+#PS1='\[\e[38;5;124;1m\]\u\[\e[0m\] \[\e[38;5;64;1m\]\[\e[0m\] \[\e[38;5;215m\]\w\[\e[0m\] \[\e[38;5;75;2m\]${PS1_CMD1}\[\e[0m\] \[\e[38;5;70;2;3m\]\[\e[0m\] '
 #store credential git
 git config --global credential.helper store
 
@@ -89,3 +89,4 @@ export PATH=/home/mark/.opencode/bin:$PATH
 ### bling.sh source start
 test -f /usr/share/ublue-os/bling/bling.sh && source /usr/share/ublue-os/bling/bling.sh
 ### bling.sh source end
+export PATH=$HOME/.local/bin:$PATH
