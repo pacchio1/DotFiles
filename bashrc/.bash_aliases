@@ -58,9 +58,7 @@ alias music-sync='cd /home/mark/Music/Music/prefe/ && spotdl https://open.spotif
 alias fileAdmin='nautilus admin:/'
 alias ghostty-keybindings='ghostty +list-keybinds --default'
 alias kvm_togle='dotf && cd scripts && sudo ./toggle_kvm.sh'
-alias java8='sdk default java 8.0.472-zulu'
-alias java23='sdk default java 23.0.2-zulu'
-alias java21='sdk default java 21.0.9-zulu'
+
 
 #tmp
 # alias beaglebone_c='sudo screen /dev/ttyACM0 115200'
