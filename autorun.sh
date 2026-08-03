@@ -56,6 +56,7 @@ links() {
 	mkdir -p ~/.config/opencode
 	ln -sf ~/git/DotFiles/.config/opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
 	ln -sf ~/git/DotFiles/.config/opencode/.gitignore ~/.config/opencode/.gitignore
+	ln -sf ~/git/DotFiles/.config/opencode/README.md ~/.config/opencode/README.md
 	ln -sf ~/git/DotFiles/.config/opencode/skills ~/.config/opencode/skills
 }
 wallpa() {
