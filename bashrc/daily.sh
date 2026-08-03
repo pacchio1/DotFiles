@@ -86,3 +86,6 @@ source <(ng completion script 2>/dev/null)
 
 # opencode
 export PATH=/home/mark/.opencode/bin:$PATH
+### bling.sh source start
+test -f /usr/share/ublue-os/bling/bling.sh && source /usr/share/ublue-os/bling/bling.sh
+### bling.sh source end
