@@ -1,6 +1,6 @@
 ---
 name: bt-wifi-coexistence-fix
-description: Use when diagnosing and fixing Bluetooth audio stutter/lag that only appears during WiFi load (speedtest, downloads, updates) on a Realtek combo chip (rtw89 / RTL8852CE, RTL8852BE, etc.) or similar WiFi/BT coexistence issues, especially on immutable Linux (Bluefin, Bazzite, Fedora Atomic/Silverblue). Identify the firmware regression, then apply a persistent immutable-safe firmware workaround. Trigger keywords: audio bluetooth, lag, stutter, crackle, rtw89, rtl8852ce, rtl8852b, coexistence, a2dp, aptx, 2.4GHz, firmware.
+description: Use when diagnosing and fixing Bluetooth audio stutter/lag that only appears during WiFi load (speedtest, downloads, updates) on a Realtek combo chip (rtw89 / RTL8852CE, RTL8852BE, etc.) or similar WiFi/BT coexistence issues, especially on immutable Linux (Bluefin, Bazzite, Fedora Atomic/Silverblue). Also covers full system freezes/reboots caused by NVMe controller errors (Micron 2550) triggered by s2idle suspend/IO on AMD laptops, fixed with kernel kargs (nvme_core.default_ps_max_latency_us=0, pcie_port_pm=off). Trigger keywords: audio bluetooth, lag, stutter, crackle, rtw89, rtl8852ce, rtl8852b, coexistence, a2dp, aptx, 2.4GHz, firmware, freeze, crash, riavvio, reset, nvme, s2idle, suspend, Micron 2550, black screen.
 ---
 
 # Fix BT/WiFi coexistence audio stutter
@@ -91,6 +91,38 @@ Dopo `systemctl reboot`:
   (NON quella regredita).
 - `cat /sys/bus/usb/devices/<BT>/power/control` → `on` (se applicato)
 - Rifai il test reale: cuffie BT + speedtest o download pesante, niente stutter.
+
+## Caso collegato: freeze/riavvio di sistema da NVMe (non audio)
+Stesso hardware (laptop AMD con s2idle), ma sintomo diverso: **freeze totale +
+riavvio forzato**, random, più frequente con sospensione e I/O intenso
+(YouTube/download). **Non confonderlo con il problema audio**: qui non c'entrano
+BT o rtw89.
+
+### Riconoscerlo
+- `pkexec dmesg | grep -i 'resetting controller'` →
+  `nvme nvme0: resetting controller due to persistent internal error`
+  (il controller invia un "Persistent Internal Error" AEN e fa reset).
+- Al momento del freeze, spesso l'ultima riga è `PM: suspend entry (s2idle)`
+  senza `suspend exit` (sospensione che non si risveglia).
+- Al boot successivo: `x86/amd: Previous system reset reason [0x08000800]:
+  an uncorrected error caused a data fabric sync flood event`.
+- `smartctl` può risultare sano (l'errore è transitorio del controller, non NAND).
+
+### Causa
+Controller NVMe (es. **Micron 2550**) con **APST attivo** che va in errore
+durante la transizione s2idle o sotto I/O, congelando il data fabric AMD.
+
+### Fix (karg kernel, reversibili)
+```bash
+pkexec rpm-ostree kargs \
+  --append="nvme_core.default_ps_max_latency_us=0" \
+  --append="pcie_port_pm=off"
+systemctl reboot
+```
+Verifica: `cat /sys/module/nvme_core/parameters/default_ps_max_latency_us` → `0`.
+Complementi: auto-suspend da idle OFF (gsettings `sleep-inactive-ac-type`
+`'nothing'`), aggiornare il firmware NVMe (via BIOS/vendor) è la fix definitiva.
+Rimozione: `rpm-ostree kargs --delete=...`.
 
 ## Errori noti / Ostacoli
 - **Versione ancora regredita dopo il reboot** → il workaround non è passato

@@ -1,9 +1,21 @@
-# Come risolvere il lag dell'audio Bluetooth sotto carico rete su Bluefin/Bazzite
+# Fix audio Bluetooth + crash di sistema (freeze/riavvio) su Bluefin/Bazzite
+
+> Due problemi distinti, documentati qui insieme perché condivisi lo stesso
+> hardware:
+>
+> 1. **Lag audio BT sotto carico rete** → regressione firmware WiFi rtw89
+>    (Bugzilla #2349675).
+> 2. **Freeze/riavvio del sistema** → errore interno del controller NVMe Micron
+>    2550, scatenato da sospensione s2idle e I/O intenso.
+
+---
 
 ## Hardware
 
 - **Laptop:** Dell Inspiron 16 5645
 - **Chip WiFi+BT:** Realtek RTL8852CE (WiFi `rtw89_8852ce`, BT USB `0bda:886c`)
+- **NVMe:** Micron 2550 1024GB (firmware `25500202`, `apsta=1` → APST attivo)
+- **CPU/GPU:** AMD Ryzen 7 8840U + Radeon 780M (solo `s2idle`, niente S3)
 - **Sistema:** Bluefin (immutabile, basato su Fedora Atomic)
 
 ## Sintomo
@@ -171,6 +183,97 @@ cat /sys/bus/usb/devices/1-4/power/control   # deve essere "on"
 # 4. Se dopo il boot compare ancora 0.27.129.4,
 #    significa che il driver lo ha preso dall'initramfs. Rigenerare:
 pkexec dracut --force
+```
+
+---
+
+## Secondo problema: freeze/riavvio del sistema (NVMe Micron 2550)
+
+### Sintomo
+
+Il sistema si **congela completamente** (schermo nero/bloccato, "come un logout")
+e richiede riavvio forzato. Succede a random, con più frequenza:
+- quando il PC va in **sospensione** (chiusura coperchio → `s2idle`) e non si
+  risveglia più;
+- durante **I/O intenso** (riproduzione video YouTube, download pesanti).
+
+Non è legato al fix audio: capita anche senza cuffie BT.
+
+### Diagnosi (come ho capito cosa non andava)
+
+Il sospetto iniziale era il risveglio `s2idle` su APU AMD (bug kernel noto
+v7.0→v7.1), quindi sono stati aggiunti `amdgpu.runpm=0` e l'auto-suspend è stato
+spento. I freeze però continuavano **anche senza sospensione**. Nei log:
+
+```bash
+pkexec dmesg | grep -i 'resetting controller'
+# -> nvme nvme0: resetting controller due to persistent internal error
+```
+
+E al momento del crash (stesso secondo):
+
+```
+nvme nvme0: resetting controller due to persistent internal error
+PM: suspend entry (s2idle)        <- freeze, mai "suspend exit"
+```
+
+Altri indizi: il boot successivo riporta
+`x86/amd: Previous system reset reason [0x08000800]: an uncorrected error caused
+a data fabric sync flood event` (l'errore NVMe propaga al data fabric AMD) e
+`nvme0n1: I/O Error (sct 0x3 / sc 0x71)`.
+
+Il controller NVMe **Micron 2550** con **APST attivo** invia un "Persistent
+Internal Error" (AEN) e va in reset, spesso durante la transizione di
+sospensione/risveglio o sotto I/O. Questo congela tutto il sistema.
+smartctl può mostrare il disco "sano" (0 errori, 35°C) perché l'errore è
+transitorio del controller, non della NAND.
+
+> Riferimenti: `nvme_handle_aer_persistent_error()` in `drivers/nvme/host/core.c`
+> (il messaggio viene da un AEN del dispositivo); casi identici documentati su
+> Framework 13/16 AMD + s2idle + NVMe.
+
+### Soluzione (karg kernel, reversibili)
+
+Disattivare il risparmio energetico che innesca l'errore:
+
+```bash
+# APST NVMe disattivato + power management porte PCIe off
+pkexec rpm-ostree kargs \
+  --append="nvme_core.default_ps_max_latency_us=0" \
+  --append="pcie_port_pm=off" \
+  --append="amdgpu.runpm=0"
+systemctl reboot
+```
+
+Verifica dopo il reboot:
+
+```bash
+cat /sys/module/nvme_core/parameters/default_ps_max_latency_us  # -> 0
+tr ' ' '\n' < /proc/cmdline | grep -E 'nvme_core|pcie_port_pm|amdgpu'
+pkexec dmesg | grep -iE 'amdgpu.*runtime pm is manually disabled'
+```
+
+### Misure complementari
+
+- **Auto-suspend da idle OFF** (il PC non si sospende da solo dopo 15 minuti,
+  che era il trigger "a sorpresa" più frequente):
+
+  ```bash
+  gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+  gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
+  ```
+
+- Aggiornare il **firmware NVMe** se disponibile (via BIOS/vendor): è la fix
+  definitiva per i problemi APST/AEN della Micron 2550.
+
+### Come annullare
+
+```bash
+pkexec rpm-ostree kargs \
+  --delete="nvme_core.default_ps_max_latency_us=0" \
+  --delete="pcie_port_pm=off" \
+  --delete="amdgpu.runpm=0"
+systemctl reboot
 ```
 
 ---
