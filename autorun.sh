@@ -1,153 +1,99 @@
+#!/bin/bash
+set -euo pipefail
+
 ###### Install Package First ######
 links() {
-	source ~/.bashrc
-	cd
+	source ~/.bashrc 2>/dev/null || true
+	cd "$HOME"
 
 	#bash
-	ln -sf ~/git/DotFiles/bashrc/daily.sh ~/.bashrc
-	thouch ~/.bash_aliases
-	mkdir ~/.config/fish
-	ln -sf ~/git/DotFiles/bashrc/.bash_aliases ~/.bash_aliases
-	ln -sf ~/git/DotFiles/.config/fish/config.fish ~/.config/fish/config.fish
+	ln -sf "$HOME/git/DotFiles/bashrc/daily.sh" "$HOME/.bashrc"
+	touch "$HOME/.bash_aliases"
+	ln -sf "$HOME/git/DotFiles/bashrc/.bash_aliases" "$HOME/.bash_aliases"
 
 	# i3
-	mkdir ~/.config/i3
-	mkdir ~/.config/i3status
-	ln -sf ~/git/DotFiles/.config/i3/config ~/.config/i3/config
-	ln -sf ~/git/DotFiles/.config/i3/mine.conf ~/.config/i3/mine.conf
-	ln -sf ~/git/DotFiles/.config/i3status/config ~/.config/i3status/config
+	mkdir -p "$HOME/.config/i3"
+	mkdir -p "$HOME/.config/i3status"
+	ln -sf "$HOME/git/DotFiles/.config/i3/config" "$HOME/.config/i3/config"
+	ln -sf "$HOME/git/DotFiles/.config/i3/mine.conf" "$HOME/.config/i3/mine.conf"
+	ln -sf "$HOME/git/DotFiles/.config/i3status/config" "$HOME/.config/i3status/config"
 
-	#terminator
-	mkdir ~/.config/terminator
-	ln -sf ~/git/DotFiles/.config/terminator/config ~/.config/terminator/config
+	# terminator
+	mkdir -p "$HOME/.config/terminator"
+	ln -sf "$HOME/git/DotFiles/.config/terminator/config" "$HOME/.config/terminator/config"
 
-	#git
-	ln -sf ~/git/DotFiles/.gitconfig ~/.gitconfig
+	# git
+	ln -sf "$HOME/git/DotFiles/.gitconfig" "$HOME/.gitconfig"
 
 	# fonts
-	mkdir ~/.local/share/fonts
-	cp -r ~/git/DotFiles/.local/share/fonts/ ~/.local/share/fonts
-	cp -r ~/git/DotFiles/.gtkrc-2.0.mine ~/.gtkrc-2.0.mine
+	mkdir -p "$HOME/.local/share/fonts"
+	cp -r "$HOME/git/DotFiles/.local/share/fonts/" "$HOME/.local/share/fonts/" 2>/dev/null || true
+	cp -r "$HOME/git/DotFiles/.gtkrc-2.0.mine" "$HOME/.gtkrc-2.0.mine" 2>/dev/null || true
 
-	#tmux
-	ln -sf ~/git/DotFiles/.tmux.conf ~/.tmux.conf
+	# tmux
+	ln -sf "$HOME/git/DotFiles/.tmux.conf" "$HOME/.tmux.conf"
 
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+		git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+	fi
 
-	#neofetch
-	mkdir ~/.config/neofetch
-	ln -sf ~/git/DotFiles/.config/neofetch/config.conf ~/.config/neofetch/config.conf
+	# neofetch
+	mkdir -p "$HOME/.config/neofetch"
+	ln -sf "$HOME/git/DotFiles/.config/neofetch/config.conf" "$HOME/.config/neofetch/config.conf"
 
-	#kitty
-	# mkdir ~/.config/kitty
+	# ghostty
+	mkdir -p "$HOME/.config/ghostty"
+	ln -sf "$HOME/git/DotFiles/.config/ghostty/config" "$HOME/.config/ghostty/config"
 
-	cd ~/git/DotFiles/kitty-master
-	cp dracula.conf diff.conf ~/.config/kitty/
-	echo "include dracula.conf" >>~/.config/kitty/kitty.conf
-	echo "Pwd per settare obsidian sync every 10min del ora"
-	sudo su -c "echo \"10 * * * * mark obsidian-sync\" >> /etc/crontab"
-	sudo su -c "echo \"* * 10 * * mark auto_backup_dnf\" >> /etc/crontab"
-
-	#Ghosty
-	mkdir ~/.config/ghosty
-	ln -sf ~/git/DotFiles/.config/ghostty/config ~/.config/ghostty/config
-
-	#opencode (i file tracciati; node_modules/package*.json restano locali)
-	mkdir -p ~/.config/opencode
-	ln -sf ~/git/DotFiles/.config/opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
-	ln -sf ~/git/DotFiles/.config/opencode/.gitignore ~/.config/opencode/.gitignore
-	ln -sf ~/git/DotFiles/.config/opencode/README.md ~/.config/opencode/README.md
-	ln -sf ~/git/DotFiles/.config/opencode/skills ~/.config/opencode/skills
+	# opencode (i file tracciati; node_modules/package*.json restano locali)
+	mkdir -p "$HOME/.config/opencode"
+	ln -sf "$HOME/git/DotFiles/.config/opencode/opencode.jsonc" "$HOME/.config/opencode/opencode.jsonc"
+	ln -sf "$HOME/git/DotFiles/.config/opencode/.gitignore" "$HOME/.config/opencode/.gitignore"
+	ln -sf "$HOME/git/DotFiles/.config/opencode/README.md" "$HOME/.config/opencode/README.md"
+	ln -sf "$HOME/git/DotFiles/.config/opencode/skills" "$HOME/.config/opencode/skills"
 }
 wallpa() {
-	source ~/.bashrc
-	mkdir ~/wallpaper
-	cd ~/wallpaper
-	git clone https://github.com/NotPacchio/WallPaper.git
-	git clone https://github.com/AngelJumbo/gruvbox-wallpapers.git
+	mkdir -p "$HOME/wallpaper"
+	cd "$HOME/wallpaper"
+	git clone https://github.com/NotPacchio/WallPaper.git 2>/dev/null || true
+	git clone https://github.com/AngelJumbo/gruvbox-wallpapers.git 2>/dev/null || true
 }
 nvimconf() {
-	source ~/.bashrc
 	# Uninstall
-	rm -rf ~/.config/nvim
-	rm -rf ~/.local/share/nvim
-	#nvim
-	# required
-	mv ~/.config/nvim{,.bak}
-	# ignore mv errors
-	mv ~/.config/nvim{,.bak} 2>/dev/null || true
-	mv ~/.local/share/nvim{,.bak} 2>/dev/null || true
+	rm -rf "$HOME/.config/nvim"
+	rm -rf "$HOME/.local/share/nvim"
+	# backup existing if present
+	mv "$HOME/.config/nvim" "$HOME/.config/nvim.bak" 2>/dev/null || true
+	mv "$HOME/.local/share/nvim" "$HOME/.local/share/nvim.bak" 2>/dev/null || true
 
-	#nvchad
-	#git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
-
-	#lazy git
-	git clone https://github.com/LazyVim/starter ~/.config/nvim
-
-	rm -rf ~/.config/nvim/.git
-
+	# lazy git
+	if [ ! -d "$HOME/.config/nvim" ]; then
+		git clone https://github.com/LazyVim/starter "$HOME/.config/nvim"
+	fi
+	rm -rf "$HOME/.config/nvim/.git"
 
 	nvim
-	# se devo muovere la cartella config di nvim farlo dopo questo commento
-	#ln -sf ~/git/DotFiles/.config/nvim ~/.config/nvim
-	#se avro personalizazioni
-	cp -r $HOME/git/DotFiles/.config/neovim/nvim/ $HOME/.config/nvim/lua/plugins/
-
+	cp -r "$HOME/git/DotFiles/.config/neovim/nvim/" "$HOME/.config/nvim/lua/plugins/" 2>/dev/null || true
 }
 # custom_theme() {
 # 	source ~/.bashrc
 
 # }
 daily() {
-	source ~/.bashrc
-	# mantieni una copia del .bashrc installato come daily (il tuo profilo quotidiano)
-	ln -sf ~/git/DotFiles/bashrc/daily.sh ~/.bashrc
+	ln -sf "$HOME/git/DotFiles/bashrc/daily.sh" "$HOME/.bashrc"
 }
+
 ask_confirmation() {
-	read -p "$1 (y/N): " response
-	case "$response" in
-	[y])
-		links
-		return 0 # Conferma
-		;;
-	*)
-		return 1 # Non conferma
-		;;
-	esac
-}
-ask_confirmation_daily() {
-	read -p "$1 (y/N): " response
-	case "$response" in
-	[y])
-		daily
-		return 0 # Conferma
-		;;
-	*)
-		return 1 # Non conferma
-		;;
-	esac
-}
-ask_confirmation_nvim() {
-	read -p "$1 (y/N): " response
+	local prompt="$1"
+	local action="$2"
+	read -p "$prompt (y/N): " response
 	case "$response" in
 	[yY])
-		nvimconf
-		return 0 # Conferma
+		$action
+		return 0
 		;;
 	*)
-		return 1 # Non conferma
-		;;
-	esac
-}
-ask_confirmation_wallpaper() {
-	read -p "$1 (y/N): " response
-	case "$response" in
-	[yY])
-		wallpa
-		return 0 # Conferma
-		;;
-	*)
-		return 1 # Non conferma
+		return 1
 		;;
 	esac
 }
@@ -166,36 +112,36 @@ ask_confirmation_wallpaper() {
 # }
 
 echo "Hai già installato tutti i pacchetti? (specificati nel readme)/have you installed all packages?"
-eccho "\n git neovim neofetch tmux kitty bat fzf exa fish locate"
-if ask_confirmation "Confermi?"; then
-	echo "Fatto! / Done!"
-else
-	echo "Non hai confermato. / Not Done !"
-fi
-echo "desideri configurare neovim? / do you want to configure neovim?"
-if ask_confirmation_nvim "Confermi?"; then
-	echo "Fatto! / Done!"
-else
-	echo "Non hai confermato. / Not Done !"
-fi
-echo "desideri anche gli sfondi / wallpapers?"
-if ask_confirmation_wallpaper "Confermi?"; then
-	echo "Fatto! / Done!"
-else
-	echo "Non hai confermato. / Not Done !"
-fi
-echo "desideri anche icons e themes?/ do you want to personalize icons and themes?"
-# if customization "Confermi?"; then
-# 	echo "Fatto! / Done!"
-# else
-# 	echo "Non hai confermato. / Not Done !"
-# fi
-echo "vuoi configurare anche il daily? / do you want to configure the daily (bashrc)?"
-if ask_confirmation_daily "Confermi?"; then
-	echo "Fatto! / Done!"
-else
-	echo "Non hai confermato. / Not Done !"
-fi
-echo "è consigliato un logut"
+	echo "\n git neovim neofetch tmux kitty bat fzf exa locate"
+	if ask_confirmation "Confermi?" links; then
+		echo "Fatto! / Done!"
+	else
+		echo "Non hai confermato. / Not Done !"
+	fi
+	echo "desideri configurare neovim? / do you want to configure neovim?"
+	if ask_confirmation "Confermi?" nvimconf; then
+		echo "Fatto! / Done!"
+	else
+		echo "Non hai confermato. / Not Done !"
+	fi
+	echo "desideri anche gli sfondi / wallpapers?"
+	if ask_confirmation "Confermi?" wallpa; then
+		echo "Fatto! / Done!"
+	else
+		echo "Non hai confermato. / Not Done !"
+	fi
+	echo "desideri anche icons e themes?/ do you want to personalize icons and themes?"
+	# if customization "Confermi?" ; then
+	# 	echo "Fatto! / Done!"
+	# else
+	# 	echo "Non hai confermato. / Not Done !"
+	# fi
+	echo "vuoi configurare anche il daily? / do you want to configure the daily (bashrc)?"
+	if ask_confirmation "Confermi?" daily; then
+		echo "Fatto! / Done!"
+	else
+		echo "Non hai confermato. / Not Done !"
+	fi
+	echo "è consigliato un logout"
 
 

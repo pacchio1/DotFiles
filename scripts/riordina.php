@@ -1,7 +1,6 @@
 <?php
-// Elenchi delle estensioni di file per ciascuna categoria
 $img = array("png", "jpg", "webp", "svg");
-$ark = array("zip", "tar", "rar", "7z", "gz");
+$ark = array("zip", "tar", "rar", "7z", "gz", "tar.xz", "tgz", "xz");
 $docs = array("pdf", "txt", "doc", "docx", "pptx", "ppt", "odt", "odp");
 $video = array("mp4", "mkv", "webm", "avi", "mov", "flv");
 $music = array("mp3", "wav", "ogg");
@@ -15,28 +14,23 @@ foreach ($files as $file) {
     if ($file !== '.' && $file !== '..') {
         $extension = pathinfo($file, PATHINFO_EXTENSION);
         $source = $directory . "/" . $file;
-
-        // Inizializzare la variabile di destinazione come vuota
         $destination = "";
 
-        // Controllare l'estensione del file e impostare la destinazione appropriata
         if (in_array($extension, $img)) {
-            $destination = "/home/mark/Pictures/" . $file;
+            $destination = getenv("HOME") . "/Pictures/" . $file;
         } elseif (in_array($extension, $ark)) {
-            $destination = "/home/mark/Downloads/Ark/" . $file;
+            $destination = getenv("HOME") . "/Downloads/Ark/" . $file;
         } elseif (in_array($extension, $docs)) {
-            $destination = "/home/mark/Documents/" . $file;
+            $destination = getenv("HOME") . "/Documents/" . $file;
         } elseif (in_array($extension, $video)) {
-            $destination = "/home/mark/Videos/" . $file;
+            $destination = getenv("HOME") . "/Videos/" . $file;
         } elseif (in_array($extension, $music)) {
-            $destination = "/home/mark/Music/" . $file;
+            $destination = getenv("HOME") . "/Music/" . $file;
         } elseif (in_array($extension, $app)) {
-            $destination = "/home/mark/appimage-rpm-build" . $file;
+            $destination = getenv("HOME") . "/appimage-rpm-build/" . $file;
         }
 
-        // Se la destinazione è impostata, sposta il file
         if ($destination !== "") {
-            // Puoi usare rename() o move_uploaded_file() per spostare il file
             if (rename($source, $destination)) {
                 echo "File $file spostato con successo in $destination\n";
             } else {
