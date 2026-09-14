@@ -6,6 +6,17 @@ ujust toggle-user-motd
 ujust devmod
 ujust dx-group
 
+# Flathub
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Stato sistema e update
+rpm-ostree status
+ujust update
+flatpak update
+
 reboot
 
 #messo bg
@@ -30,6 +41,9 @@ DBeaver Community
 Spotify
 Gear Lever
 Web App Hub
+zap
+burp suite
+wireshark
 
 ## Dconf
 week-start-day -> "monday"
@@ -48,6 +62,14 @@ Opencode -> curl -fsSL https://opencode.ai/install | bash
 sdkman -> curl -s "https://get.sdkman.io" | bash
 
 brew install npm -> npm config set min-release-age=30 --location=user
+
+# Distrobox / Toolbox
+distrobox create --name dev --image fedora:latest
+toolbox create
+
+# Dotfiles versionati
+chezmoi init
+
 
 #### YARN
 npm install --global yarn@1

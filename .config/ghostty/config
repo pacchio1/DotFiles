@@ -1,2 +1,4 @@
-background = 151515
+background = 242424
+foreground = e8ddc5
 font-family = JetBrains Mono
+font-size = 11
