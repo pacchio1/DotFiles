@@ -54,7 +54,6 @@ cd ; mkdir git; cd git; git clone <https://github.com/pacchio1/DotFiles.git> && 
 ### bashrc/
 - `daily.sh` — Configurazione bash quotidiana (alias, prompt, plugin)
 - `.bash_aliases` — Alias personalizzati
-- `.bash_profile` — Profilo bash
 
 ## Struttura dei File
 
