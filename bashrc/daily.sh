@@ -1,6 +1,6 @@
 #!/bin/bash
 
-########## Confisurazione BASH ##########
+########## Configurazione BASH ##########
 
 # If not running interactively, don't do anything
 case $- in
@@ -76,7 +76,7 @@ fi
 #PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'
 #PS1='\[\e[38;5;124;1m\]\u\[\e[0m\] \[\e[38;5;64;1m\]\[\e[0m\] \[\e[38;5;215m\]\w\[\e[0m\] \[\e[38;5;75;2m\]${PS1_CMD1}\[\e[0m\] \[\e[38;5;70;2;3m\]\[\e[0m\] '
 #store credential git
-git config --global credential.helper store
+git config --global credential.helper cache 2>/dev/null || true
 
 #sdkman
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -85,8 +85,8 @@ git config --global credential.helper store
 source <(ng completion script 2>/dev/null)
 
 # opencode
-export PATH=/home/mark/.opencode/bin:$PATH
+export PATH="$HOME/.opencode/bin:$PATH"
 ### bling.sh source start
 test -f /usr/share/ublue-os/bling/bling.sh && source /usr/share/ublue-os/bling/bling.sh
 ### bling.sh source end
-export PATH=$HOME/.local/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"

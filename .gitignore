@@ -5,3 +5,12 @@ package-lock.json
 package.json
 .themes
 .icons
+*.log
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+*.bak.*
+*.backup
+
