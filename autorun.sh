@@ -3,7 +3,6 @@ set -euo pipefail
 
 ###### Install Package First ######
 links() {
-	source ~/.bashrc 2>/dev/null || true
 	cd "$HOME"
 
 	#bash
@@ -86,7 +85,8 @@ daily() {
 ask_confirmation() {
 	local prompt="$1"
 	local action="$2"
-	read -p "$prompt (y/N): " response
+	local response=""
+	read -rp "$prompt (y/N): " response || response=""
 	case "$response" in
 	[yY])
 		$action
@@ -111,8 +111,9 @@ ask_confirmation() {
 # 	esac
 # }
 
-echo "Hai già installato tutti i pacchetti? (specificati nel readme)/have you installed all packages?"
-	echo "\n git neovim neofetch tmux kitty bat fzf exa locate"
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+	echo "Hai già installato tutti i pacchetti? (specificati nel readme)/have you installed all packages?"
+	printf '\n git neovim neofetch tmux kitty bat fzf exa locate\n'
 	if ask_confirmation "Confermi?" links; then
 		echo "Fatto! / Done!"
 	else
@@ -143,5 +144,6 @@ echo "Hai già installato tutti i pacchetti? (specificati nel readme)/have you i
 		echo "Non hai confermato. / Not Done !"
 	fi
 	echo "è consigliato un logout"
+fi
 
 
