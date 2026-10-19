@@ -6,7 +6,7 @@
 ## Fatto (2026-09-14, verificato in Docker Fedora)
 - [x] Fix typo in `autorun.sh` (`thouch` → `touch`, `eccho` → `echo`, `Ghosty` → `ghostty`, `logut` → `logout`)
 - [x] Sostituiti path hardcoded `/home/mark/` con `$HOME` (autorun.sh, daily.sh, riordina.sh, riordina.php)
-- [x] `credential.helper = store` → `cache` (sicurezza, niente credenziali in plaintext)
+- [x] `credential.helper = cache` → `store` (credenziali persistenti)
 - [x] Rimosso side-effect `git config --global` da `daily.sh` (sovrascriveva il .gitconfig versionato a ogni shell)
 - [x] Aggiunto `set -euo pipefail` e gestione errori; rimossi `source ~/.bashrc` fragili dalle funzioni
 - [x] Consolidate 4 funzioni `ask_confirmation*` in una sola parametrizzata

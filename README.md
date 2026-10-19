@@ -78,7 +78,7 @@ DotFiles/
 
 - Corretto typo in `autorun.sh` (`thouch` → `touch`, `eccho` → `echo`)
 - Sostituiti tutti i path hardcoded `/home/mark/` con `$HOME`
-- Rimosso `credential.helper = store` in favore di `cache` per sicurezza
+- Impostato `credential.helper = store` per mantenere le credenziali Git persistenti
 - Aggiunto `set -euo pipefail` agli script
 - Consolidate le 4 funzioni `ask_confirmation*` in un'unica funzione parametrizzata
 - Corretto typo `firefoxhttps://` in i3 config
@@ -87,7 +87,7 @@ DotFiles/
 
 ## Sicurezza
 
-- Credenziali git gestite con `credential.helper = cache` (timeout 3600s) invece di `store`
+- Credenziali git gestite con `credential.helper = store` (persistenti)
 - Nessun dato sensibile committato nel repository
 - `.gitignore` esclude `node_modules`, `.themes`, `.icons`
 
@@ -101,4 +101,3 @@ DotFiles/
 ## License
 
 Questo progetto è distribuito senza license.
-
