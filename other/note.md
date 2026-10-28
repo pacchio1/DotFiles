@@ -23,10 +23,14 @@ reboot
 
 ## Exstension
 
+clipboard history@stuarthayhurst
 Quick close in overview
 Advanced media controller #@Sanjai.com
 alphabetical app grid
 quick setting audio control
+vs code search provider @mrramble
+
+-> win + v clipboard
 
 ## Flatpak 
 
@@ -55,6 +59,7 @@ Turin
 ## Shorcut
 
 win + sift + s -> take a screenshot interactlivy
+win + shift + v -> show the notification list
 
 ### OTHER
 
