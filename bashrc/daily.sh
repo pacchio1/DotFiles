@@ -88,5 +88,5 @@ test -f /usr/share/ublue-os/bling/bling.sh && source /usr/share/ublue-os/bling/b
 ### bling.sh source end
 export PATH="$HOME/.local/bin:$PATH"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+eval "$($HOME/.linuxbrew/bin/brew shellenv bash)"
 eval "$(zoxide init bash)"

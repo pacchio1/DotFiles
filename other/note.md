@@ -1,4 +1,4 @@
-cd /var/home/mark/Templates
+cd ~/Templates
 touch note.md
 touch text.txt
 
