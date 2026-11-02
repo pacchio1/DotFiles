@@ -1,0 +1,3 @@
+[submodule ".config/opencode/skills/security-audit-skill"]
+	path = .config/opencode/skills/security-audit-skill
+	url = https://github.com/cloudflare/security-audit-skill.git

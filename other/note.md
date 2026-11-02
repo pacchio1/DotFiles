@@ -1,20 +1,29 @@
 cd /var/home/mark/Templates
 touch note.md
 touch text.txt
-# per togliere logo
+
+## per togliere logo
+
 ujust toggle-user-motd
 ujust devmod
 ujust dx-group
 
-# Flathub
+## Flathub
+
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-## homebrew installed
-zoxide
+## Homebrew
 
-# Stato sistema e update
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+## homebrew installed
+
+zoxide
+opencode
+codex
+
+## Stato sistema e update
+
 rpm-ostree status
 ujust update
 flatpak update
@@ -52,10 +61,12 @@ burp suite
 wireshark
 
 ## Dconf
+
 week-start-day -> "monday"
 temperature-unit -> centigrade
 
 ### wheather
+
 Turin
 
 ## Shorcut
@@ -65,10 +76,10 @@ win + shift + v -> show the notification list
 
 ### OTHER
 
-Opencode -> curl -fsSL https://opencode.ai/install | bash
 sdkman -> curl -s "https://get.sdkman.io" | bash
 
 # Distrobox / Toolbox
+
 distrobox create --name dev --image fedora:latest
 toolbox create
 
