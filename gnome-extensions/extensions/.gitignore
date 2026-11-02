@@ -1,0 +1,15 @@
+# Escludi queste estensioni dal versionamento del codice
+# Mantieni solo le configurazioni in ../settings.dconf
+
+appindicator-support@rgi-jonas.gmail.com
+apps-menu@gnome-shell-extensions.gcampax.github.com
+bazaar-integration@kolunmi.github.io
+blur-my-shell@aunetx
+caffeine@patapon.info
+dash-to-dock@micxgx.gmail.com
+gradia-integration@alexandervanhee.github.io
+gsconnect@andyholmes.github.io
+launch-new-instance@gnome-shell-extensions.gcampax.github.com
+places-menu@gnome-shell-extensions.gcampax.github.com
+search-light@icedman.github.com
+window-list@gnome-shell-extensions.gcampax.github.com

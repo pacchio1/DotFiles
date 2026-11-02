@@ -1,0 +1,10 @@
+{
+    "id": "matrix",
+    "name": "Matrix",
+    "author": "Advanced Media Controller",
+    "version": "1.0",
+    "description": "Inspired by matrix movie neo.",
+    "repoUrl": "https://codeberg.org/sanjai-shaarugesh/matrix",
+    "gnomeVersions": "40-50",
+    "thumb": "Matrix.gif"
+}

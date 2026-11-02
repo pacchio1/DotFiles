@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022 Aryan Kaushik (Aryan20)
+# This file is distributed under the same license as the Logo Menu package.
+# Igor Calì <igor.cali0@gmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Logo Menu 18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-19 01:47+0530\n"
+"PO-Revision-Date: 2022-11-17 23:21+0530\n"
+"Last-Translator: Igor Calì <igor.cali0@gmail.com>\n"
+"Language-Team: <>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: extension.js:75
+msgid "About My System"
+msgstr "Informazioni sul sistema"
+
+#: extension.js:78
+msgid "Documentation"
+msgstr "Documentazione"
+
+#: extension.js:81
+msgid "System Settings.."
+msgstr "Impostazioni di sistema..."
+
+#: extension.js:80
+msgid "Activities"
+msgstr "Attività"
+
+#: extension.js:82
+msgid "App Grid"
+msgstr "Griglia applicazioni"
+
+#: extension.js:86 PrefsLib/adw.js:314
+msgid "Software Center"
+msgstr "Centro software"
+
+#: extension.js:88 PrefsLib/adw.js:332
+msgid "System Monitor"
+msgstr "Monitor di sistema"
+
+#: extension.js:89 PrefsLib/adw.js:294
+msgid "Terminal"
+msgstr "Terminale"
+
+#: extension.js:87
+msgid "Containers"
+msgstr "Container"
+
+#: extension.js:90
+msgid "Extensions"
+msgstr "Estensioni"
+
+#: extension.js:94
+msgid "Force Quit App"
+msgstr "Forza chiusura applicazione"
+
+#: extension.js:99
+msgid "Sleep"
+msgstr "Sospendi"
+
+#: extension.js:100
+msgid "Restart..."
+msgstr "Riavvia..."
+
+#: extension.js:101
+msgid "Shut Down..."
+msgstr "Spegni..."
+
+#: extension.js:105 extension.js:110
+msgid "Lock Screen"
+msgstr "Blocco schermo"
+
+#: extension.js:107
+msgid "Log Out..."
+msgstr "Termina sessione..."
+
+#: PrefsLib/adw.js:41
+msgid "Symbolic Icons"
+msgstr "Icone simboliche"
+
+#: PrefsLib/adw.js:45
+msgid "Coloured Icons"
+msgstr "Icone colorate"
+
+#: PrefsLib/adw.js:49
+msgid "Icon Settings"
+msgstr "Impostazione icona"
+
+#: PrefsLib/adw.js:123
+msgid "Icon Size"
+msgstr "Dimensioni icona"
+
+#: PrefsLib/adw.js:156
+msgid "Use Custom Icon"
+msgstr "Usa icona personalizzata"
+
+#: PrefsLib/adw.js:170
+msgid "Selected Icon"
+msgstr "Icona selezionata"
+
+#: PrefsLib/adw.js:195
+msgid "Select a Custom Icon"
+msgstr "Seleziona un'icona personalizzata"
+
+#: PrefsLib/adw.js:238
+msgid "Change Defaults"
+msgstr "Modifica impostazioni predefinite"
+
+#: PrefsLib/adw.js:242
+msgid "Show/Hide Options"
+msgstr "Mostra/Nascondi le opzioni"
+
+#: PrefsLib/adw.js:246
+msgid "Top Panel Options"
+msgstr "Opzioni panello superiore"
+
+#: PrefsLib/adw.js:254
+msgid "Icon Click Type to open Activities"
+msgstr "Tipologia clic per lanciare le Attività"
+
+#: PrefsLib/adw.js:260
+msgid "Left Click "
+msgstr "Clic sinistro "
+
+#: PrefsLib/adw.js:261
+msgid "Middle Click "
+msgstr "Clic centrale "
+
+#: PrefsLib/adw.js:262
+msgid "Right Click "
+msgstr "Clic destro "
+
+#: PrefsLib/adw.js:275
+msgid "Preferred Extensions Application"
+msgstr "Applicazione estensioni preferita"
+
+#: PrefsLib/adw.js:281
+msgid "GNOME Extensions"
+msgstr "Estensioni"
+
+#: PrefsLib/adw.js:282
+msgid "Extensions Manager"
+msgstr "Gestore di estensioni"
+
+#: PrefsLib/adw.js:350
+msgid "Enable Power Options"
+msgstr "Abilità opzioni alimentazione"
+
+#: PrefsLib/adw.js:365
+msgid "Hide Force Quit option"
+msgstr "Nascondi l'opzione Chiusura forzata"
+
+#: PrefsLib/adw.js:382
+msgid "Show Lock Screen option"
+msgstr "Mostra l'opzione Blocco schermo"
+
+#: PrefsLib/adw.js:398
+msgid "Hide Software Centre option"
+msgstr "Nascondi l'opzione Centro Software"
+
+#: PrefsLib/adw.js:414
+#, fuzzy
+msgid "Show Activities Button"
+msgstr "Mostra pulsante Attività"
+
+#: PrefsLib/adw.js:430
+msgid "Hide Icon Shadow"
+msgstr "Nascondi l'ombra dell'icona"
+
+#: PrefsLib/adw.js:471 PrefsLib/adw.js:476
+msgid "About"
+msgstr "Informazioni"
+
+#: PrefsLib/adw.js:500
+msgid "Logo Menu"
+msgstr "Logo Menu"
+
+#: PrefsLib/adw.js:507
+msgid "Quick access menu for GNOME"
+msgstr "Menu rapido per GNOME"
+
+#: PrefsLib/adw.js:524
+msgid "Logo Menu Version"
+msgstr "Versione di Logo Menu"
+
+#: PrefsLib/adw.js:536
+msgid "GNOME Version"
+msgstr "Versione GNOME"
+
+#: PrefsLib/adw.js:543
+msgid "Created with love by"
+msgstr "Creato con amore da"
+
+#: PrefsLib/adw.js:550
+msgid "Matrix/Element room"
+msgstr "Stanza Matrix/Element"
+
+#: PrefsLib/adw.js:566
+msgid "Contributors"
+msgstr "Contributori"
+
+#: PrefsLib/adw.js:583
+msgid "This program comes with absolutely no warranty."
+msgstr "Questo programma è fornito senza alcuna garanzia."
+
+#: PrefsLib/adw.js:584
+#, javascript-format
+msgid "See the %sGNU General Public License, version 2 or later%s for details."
+msgstr ""
+"Consultare la %sGNU General Public License, versione 2 o successive%s per i "
+"dettagli."
+
+#~ msgid "Software Center..."
+#~ msgstr "Centro software..."
+
+#~ msgid "Github"
+#~ msgstr "Github"
+
+#~ msgid "Icon"
+#~ msgstr "Icona"
+
+#~ msgid ""
+#~ "<span size=\"small\">This program comes with absolutely no warranty.\n"
+#~ "See the <a href=\"https://gnu.org/licenses/old-licenses/gpl-2.0."
+#~ "html\">GNU General Public License, version 2 or later</a> for details.</"
+#~ "span>"
+#~ msgstr ""
+#~ "<span size=\"small\">Questo programma viene fornito senza alcuna "
+#~ "garanzia.\n"
+#~ "Consultare la <a href=\"https://gnu.org/licenses/old-licenses/gpl-2.0."
+#~ "html\">GNU General Public License, versione 2 o successive</a> per "
+#~ "dettagli.</span>"
+
+#~ msgid "Lock Orientation"
+#~ msgstr "Blocco orientamento"
+
+#~ msgid "Show Lock Orientation option"
+#~ msgstr "Mostra l'opzione Blocco orientamento"
