@@ -32,6 +32,9 @@ icon-saturation=0.0
 icon-size=0
 tray-pos='right'
 
+[auto-move-windows]
+application-list=['org.telegram.desktop.desktop:2', 'noop.desktop:2', 'org.chromium.Chromium.chromium-wah-520Hr1iF.desktop:2']
+
 [blur-my-shell]
 rounded-blur-found=true
 settings-version=2
