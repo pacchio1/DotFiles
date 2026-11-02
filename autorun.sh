@@ -50,6 +50,11 @@ links() {
 	ln -sf "$HOME/git/DotFiles/.config/opencode/.gitignore" "$HOME/.config/opencode/.gitignore"
 	ln -sf "$HOME/git/DotFiles/.config/opencode/README.md" "$HOME/.config/opencode/README.md"
 	ln -sf "$HOME/git/DotFiles/.config/opencode/skills" "$HOME/.config/opencode/skills"
+
+	# Inizializza submodule security-audit-skill se presente nel repo
+	if [ -f "$HOME/git/DotFiles/.gitmodules" ]; then
+		(cd "$HOME/git/DotFiles" && git submodule update --init --recursive) || true
+	fi
 }
 wallpa() {
 	mkdir -p "$HOME/wallpaper"
