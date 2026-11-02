@@ -55,6 +55,21 @@ links() {
 	if [ -f "$HOME/git/DotFiles/.gitmodules" ]; then
 		(cd "$HOME/git/DotFiles" && git submodule update --init --recursive) || true
 	fi
+
+	# Inizializza submodule silentnotification_opencode e lancia install-linux.sh
+	if [ -d "$HOME/git/DotFiles/silentnotification_opencode" ]; then
+		(cd "$HOME/git/DotFiles" && git submodule update --init --recursive silentnotification_opencode) || true
+	fi
+	# Se il repo è anche clonato direttamente nella home git
+	if [ ! -d "$HOME/git/silentnotification_opencode/.git" ]; then
+		git clone https://github.com/pacchio1/opencode_tray.git "$HOME/git/silentnotification_opencode" 2>/dev/null || true
+	fi
+	# Esegui install-linux.sh seguendo il readme
+	if [ -f "$HOME/git/DotFiles/silentnotification_opencode/silentnotification_opencode/install-linux.sh" ]; then
+		bash "$HOME/git/DotFiles/silentnotification_opencode/silentnotification_opencode/install-linux.sh" || true
+	elif [ -f "$HOME/git/silentnotification_opencode/silentnotification_opencode/install-linux.sh" ]; then
+		bash "$HOME/git/silentnotification_opencode/silentnotification_opencode/install-linux.sh" || true
+	fi
 }
 wallpa() {
 	mkdir -p "$HOME/wallpaper"
