@@ -1,3 +1,6 @@
 [submodule ".config/opencode/skills/security-audit-skill"]
 	path = .config/opencode/skills/security-audit-skill
 	url = https://github.com/cloudflare/security-audit-skill.git
+[submodule "silentnotification_opencode"]
+	path = silentnotification_opencode
+	url = https://github.com/pacchio1/opencode_tray.git
