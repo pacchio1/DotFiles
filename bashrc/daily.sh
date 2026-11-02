@@ -87,3 +87,6 @@ export PATH="$HOME/.opencode/bin:$PATH"
 test -f /usr/share/ublue-os/bling/bling.sh && source /usr/share/ublue-os/bling/bling.sh
 ### bling.sh source end
 export PATH="$HOME/.local/bin:$PATH"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+eval "$(zoxide init bash)"

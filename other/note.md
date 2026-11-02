@@ -11,6 +11,8 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+## homebrew installed
+zoxide
 
 # Stato sistema e update
 rpm-ostree status
@@ -66,8 +68,6 @@ win + shift + v -> show the notification list
 Opencode -> curl -fsSL https://opencode.ai/install | bash
 sdkman -> curl -s "https://get.sdkman.io" | bash
 
-brew install npm -> npm config set min-release-age=30 --location=user
-
 # Distrobox / Toolbox
 distrobox create --name dev --image fedora:latest
 toolbox create
@@ -75,6 +75,9 @@ toolbox create
 # Dotfiles versionati
 chezmoi init
 
+### NPM
+
+brew install npm -> npm config set min-release-age=30 --location=user
 
 #### YARN
 npm install --global yarn@1
