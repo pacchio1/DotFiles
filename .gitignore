@@ -25,3 +25,6 @@ package.json
 profili json/
 *.code-profile
 *credentials*
+
+# Binari locali di supporto (gitleaks)
+.tools/

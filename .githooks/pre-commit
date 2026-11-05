@@ -6,8 +6,8 @@ root="$(git rev-parse --show-toplevel)"
 cd "$root"
 
 bin="$(command -v gitleaks || true)"
-if [ -z "$bin" ] && [ -x "$root/.recover/gitleaks" ]; then
-  bin="$root/.recover/gitleaks"
+if [ -z "$bin" ] && [ -x "$root/.tools/gitleaks" ]; then
+  bin="$root/.tools/gitleaks"
 fi
 
 if [ -n "$bin" ]; then
