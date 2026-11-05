@@ -1,0 +1,16 @@
+# Configurazione gitleaks per DotFiles.
+# Regole di default + allowlist per asset binari e file di terze parti.
+
+title = "DotFiles secret scan"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Asset binari, font e backup locali"
+paths = [
+  '''\.local/share/fonts/''',
+  '''customization/EasyEffects-Presets-master/irs/''',
+  '''other/.*\.(png|jpe?g|gif|webp)$''',
+  '''\.recover/''',
+]

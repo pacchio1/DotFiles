@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Pre-commit: blocca il commit se gitleaks trova segreti nei file in staging.
+set -euo pipefail
+
+root="$(git rev-parse --show-toplevel)"
+cd "$root"
+
+bin="$(command -v gitleaks || true)"
+if [ -z "$bin" ] && [ -x "$root/.recover/gitleaks" ]; then
+  bin="$root/.recover/gitleaks"
+fi
+
+if [ -n "$bin" ]; then
+  exec "$bin" git --staged --redact --no-banner -c "$root/.gitleaks.toml"
+fi
+
+echo "gitleaks non installato: eseguo il controllo di fallback sui file in staging." >&2
+if git diff --cached -U0 \
+  | grep -E '^\+' \
+  | grep -qE 'BEGIN [A-Z ]*PRIVATE KEY|gh[pousr]_[A-Za-z0-9]{30,}|AKIA[0-9A-Z]{16}|sk-(proj-)?[A-Za-z0-9_-]{30,}|xox[baprs]-[A-Za-z0-9-]{20,}'; then
+  echo "ERRORE: possibile segreto nei file in staging." >&2
+  echo "Installa gitleaks (https://github.com/gitleaks/gitleaks) oppure rimuovi il segreto." >&2
+  exit 1
+fi

@@ -22,6 +22,6 @@ services:
     ports:
       - "9443:9443"
     environment:
-      PORTAINER_ADMIN_PASSWORD: ***REMOVED***
-      PORTAINER_ADMIN_USERNAME: admin
+      PORTAINER_ADMIN_PASSWORD: ${PORTAINER_ADMIN_PASSWORD:?imposta PORTAINER_ADMIN_PASSWORD in other/docker/.env}
+      PORTAINER_ADMIN_USERNAME: ${PORTAINER_ADMIN_USERNAME:-admin}
     restart: unless-stopped

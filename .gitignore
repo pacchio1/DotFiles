@@ -14,3 +14,14 @@ package.json
 *.bak.*
 *.backup
 
+
+# Segreti e file locali (mai committare)
+.env
+.env.*
+!.env.example
+*.ovpn
+*.pem
+*.key
+profili json/
+*.code-profile
+*credentials*
