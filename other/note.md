@@ -21,6 +21,9 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 zoxide
 opencode
 codex
+tlrc #(man + sintetico)
+atuin
+brew services start atuin
 
 ## Stato sistema e update
 
@@ -89,6 +92,7 @@ chezmoi init
 ### NPM
 
 brew install npm -> npm config set min-release-age=30 --location=user
+brew install mvn
 
 #### YARN
 npm install --global yarn@1

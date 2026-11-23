@@ -57,12 +57,6 @@
       <description>Path to the custom icon image file.</description>
     </key>
 
-    <key type="b" name="show-distroshelf">
-      <default>false</default>
-      <summary>Toggle DistroShelf option visibility</summary>
-      <description>Toggle DistroShelf option visibility.</description>
-    </key>
-
     <key type="b" name="hide-forcequit">
       <default>false</default>
       <summary>Toggle Force Quit option visibility</summary>
@@ -101,7 +95,7 @@
     </key>
 
     <key type="s" name="menu-button-system-monitor">
-      <default>"/usr/bin/missioncenter-helper"</default>
+      <default>"gnome-system-monitor"</default>
       <summary>Menu System Monitor</summary>
       <description>Change the Menu System Monitor.</description>
     </key>

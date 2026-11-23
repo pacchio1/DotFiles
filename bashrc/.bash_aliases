@@ -26,6 +26,8 @@ alias e='exit'
 #alias code='codium'
 alias todo='vim ~/TODO.md'
 alias batteri3='vim +17 ~/.config/i3status/config'
+alias oc='opencode'
+alias distro-note='vim /var/home/mark/git/DotFiles/other/note.md'
 
 # alias stabledifusion-start='cd  ~/stablediff/  && ./webui.sh --listen --api'
 # alias jacket-torrent-start='cd /home/mark/.local/share/applications/Jackett && ./jackett'
@@ -58,7 +60,6 @@ alias music-sync='cd /home/mark/Music/Music/prefe/ && spotdl https://open.spotif
 alias fileAdmin='nautilus admin:/'
 alias ghostty-keybindings='ghostty +list-keybinds --default'
 alias kvm_togle='dotf && cd scripts && sudo ./toggle_kvm.sh'
-
 
 #tmp
 # alias beaglebone_c='sudo screen /dev/ttyACM0 115200'

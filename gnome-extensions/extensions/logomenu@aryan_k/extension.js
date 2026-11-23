@@ -1,3 +1,4 @@
+import Clutter from 'gi://Clutter';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
@@ -50,15 +51,20 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         // Menu
         this._settings.connectObject('changed::hide-softwarecentre', () => this._displayMenuItems(), this);
         this._settings.connectObject('changed::show-power-options', () => this._displayMenuItems(), this);
-        this._settings.connectObject('changed::show-distroshelf', () => this._displayMenuItems(), this);
         this._settings.connectObject('changed::hide-forcequit', () => this._displayMenuItems(), this);
         this._settings.connectObject('changed::show-lockscreen', () => this._displayMenuItems(), this);
         this._settings.connectObject('changed::show-activities-button', () => this._displayMenuItems(), this);
         this._displayMenuItems();
 
-        // bind middle click option to toggle overview
-        this.connect('button-press-event', this._buttonPressEvent.bind(this));
-        this.connect('destroy', () => { this._settings = null; });
+        // Disable the parent's ClickGesture (GNOME 50+) so pointer events reach vfunc_event
+        this._clickGesture?.set_enabled(false);
+
+        this.connect('destroy', () => {
+            // Don't leave a force quit grab behind if we're disabled mid-selection (e.g. screen lock)
+            this._selection?.stop();
+            this._selection = null;
+            this._settings = null;
+        });
     }
 
     _addItem(item) {
@@ -67,7 +73,6 @@ class LogoMenuMenuButton extends PanelMenu.Button {
 
     _displayMenuItems() {
         const showPowerOptions = this._settings.get_boolean('show-power-options');
-        const showDistroShelf = this._settings.get_boolean('show-distroshelf');
         const showForceQuit = !this._settings.get_boolean('hide-forcequit');
         const showLockScreen = this._settings.get_boolean('show-lockscreen');
         const showSoftwareCenter = !this._settings.get_boolean('hide-softwarecentre');
@@ -76,27 +81,21 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         this.menu.removeAll();
 
         this._addItem(new MenuItem(_('About My System'), () => this._aboutThisDistro()));
-        this._addItem(new MenuItem(_('Documentation'), () => this._documentation()));
+        // this._addItem(new MenuItem(_('System Settings...'), () => this._systemPreferences()));
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-
-        this._addItem(new MenuItem(_('System Settings...'), () => this._systemPreferences()));
 
         if (!showActivitiesButton)
             this._addItem(new MenuItem(_('Activities'), () => this._overviewToggle()));
 
-        // this._addItem(new MenuItem(_('App Grid'), () => this._showAppGrid()));
+        this._addItem(new MenuItem(_('App Grid'), () => this._showAppGrid()));
+        this._addItem(new PopupMenu.PopupSeparatorMenuItem());
+
         if (showSoftwareCenter)
             this._addItem(new MenuItem(_('Software Center'), () => this._openSoftwareCenter()));
 
-        this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-
-        this._addItem(new MenuItem(_('Extensions'), () => this._openExtensionsApp()));
         this._addItem(new MenuItem(_('System Monitor'), () => this._openSystemMonitor()));
         this._addItem(new MenuItem(_('Terminal'), () => this._openTerminal()));
-        this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-
-        if (showDistroShelf)
-            this._addItem(new MenuItem(_('Containers'), () => this._openDistroShelf()));
+        this._addItem(new MenuItem(_('Extensions'), () => this._openExtensionsApp()));
 
         if (showForceQuit) {
             this._addItem(new PopupMenu.PopupSeparatorMenuItem());
@@ -120,30 +119,30 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         }
     }
 
-    _buttonPressEvent(actor, event) {
-        // left click === 1, middle click === 2, right click === 3
-        const clickType = this._settings.get_int('menu-button-icon-click-type');
-        if (event.get_button() === clickType) {
-            this.menu.close();
-            Main.overview.toggle();
+    vfunc_event(event) {
+        if (event.type() === Clutter.EventType.BUTTON_PRESS) {
+            // left click === 1, middle click === 2, right click === 3
+            const clickType = this._settings.get_int('menu-button-icon-click-type');
+            if (event.get_button() === clickType) {
+                this.menu.close();
+                Main.overview.toggle();
+            } else {
+                this.menu?.toggle();
+            }
+            return Clutter.EVENT_STOP;
+        } else if (event.type() === Clutter.EventType.TOUCH_BEGIN) {
+            this.menu?.toggle();
+            return Clutter.EVENT_STOP;
         }
+        return super.vfunc_event(event);
     }
 
     _aboutThisDistro() {
-        const gnomeMajorVersion = parseInt(Config.PACKAGE_VERSION.toString().split('.')[0]);
-        if (gnomeMajorVersion >= 46) {
-            Util.spawn(['gnome-control-center', 'about']);
-        } else {
-            Util.spawn(['gnome-control-center', 'info-overview']);
-        }
+        Util.spawn(['gnome-control-center', 'system', 'about']);
     }
 
     _systemPreferences() {
         Util.spawn(['gnome-control-center']);
-    }
-
-    _documentation() {
-        Util.trySpawnCommandLine('xdg-open https://docs.projectbluefin.io/')
     }
 
     _overviewToggle() {
@@ -181,15 +180,13 @@ class LogoMenuMenuButton extends PanelMenu.Button {
     }
 
     _forceQuit() {
-        new Selection.SelectionWindow();
+        this._selection?.stop();
+        this._selection = new Selection.SelectionWindow();
+        this._selection.connect('stop', () => { this._selection = null; });
     }
 
     _openTerminal() {
         Util.trySpawnCommandLine(this._settings.get_string('menu-button-terminal'));
-    }
-
-    _openDistroShelf() {
-        Util.trySpawnCommandLine('/usr/bin/distroshelf-helper');
     }
 
     _openSoftwareCenter() {

@@ -56,8 +56,8 @@ corner-radius=18
 override-background=true
 pipeline='pipeline_default_rounded'
 sigma=7
-static-blur=false
-style-dash-to-dock=2
+static-blur=true
+style-dash-to-dock=0
 
 [blur-my-shell/lockscreen]
 pipeline='pipeline_default'

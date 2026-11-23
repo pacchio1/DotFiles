@@ -30,8 +30,6 @@ export const SymbolicDistroIcons = [
     {PATH: '/Resources/nobara-logo-symbolic.svg'},
     {PATH: '/Resources/steam-deck-logo-symbolic.svg'},
     {PATH: '/Resources/ublue-logo-symbolic.svg'},
-    {PATH: '/Resources/framework-logo-symbolic.svg'},
-    {PATH: '/Resources/ampere-logo-symbolic.svg'},
     {PATH: '/Resources/centos-logo-symbolic.svg'},
     {PATH: '/Resources/cachyos-logo-symbolic.svg'},
 ];

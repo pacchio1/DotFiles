@@ -1,0 +1,7 @@
+{
+  "uuid": "opencode-tray@local",
+  "name": "OpenCode Tray",
+  "description": "Porta su Linux/GNOME il tray di opencode: icona colorata nel pannello (nero/verde/giallo), menu con stato, costi e progetti.",
+  "shell-version": ["45", "46", "47", "48", "49", "50"],
+  "version": 2
+}

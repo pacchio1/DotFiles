@@ -1,0 +1,39 @@
+/* Vertical Alt+Tab list */
+
+.vertical-switcher-popup {
+  padding: 8px;
+}
+
+.vertical-switcher-list {
+  max-height: 70vh;
+  min-width: 320px;
+}
+
+.vertical-switcher-list .switcher-list-item-container {
+  spacing: 0;
+}
+
+.vertical-switcher-list .item-box {
+  padding: 6px 10px;
+  margin: 0;
+  border-radius: 12px;
+}
+
+.vertical-switcher-list .item-box:selected,
+.vertical-switcher-list .item-box:selected:hover {
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+.vertical-switcher-list .item-box:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.alt-tab-vertical-item {
+  spacing: 10px;
+}
+
+.alt-tab-vertical-title {
+  max-width: 420px;
+  font-weight: 600;
+  margin-left: 4px;
+}

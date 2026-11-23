@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.alttab-list" path="/org/gnome/shell/extensions/alttab-list/">
+    <key name="dummy" type="b">
+      <default>false</default>
+      <summary>Dummy Setting</summary>
+      <description>Added to satisfy EGO011 static analysis</description>
+    </key>
+  </schema>
+</schemalist>
